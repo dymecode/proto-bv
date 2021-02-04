@@ -1,7 +1,11 @@
 {
   "name": "proto-bv",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dymecode/proto-bv.git"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -15,6 +19,10 @@
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/google-fonts": "^1.2.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1"
