@@ -88,3 +88,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Windows OS
+Thumbs.db
