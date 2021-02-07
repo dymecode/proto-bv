@@ -1,13 +1,24 @@
 <template functional>
-  <div class="container-fluid">
+  <div class="page-view container-fluid">
     <div class="row flex-xl-nowrap2">
-      <div class="bd-sidebar border-bottom-0 col-md-3 col-xl-2 col-12"></div>
+      <div class="view-sidebar border-bottom-0 col-md-3 col-xl-2 col-12">
+        <sidebar></sidebar>
+      </div>
+      <main class="col-md-9 col-xl-8 py-md-3 pl-md-5 view-content">
+        <div
+          class="d-md-flex flex-md-row-reverse align-items-center justify-content-between"
+        ></div>
+      </main>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "PageView"
-};
+  import Sidebar from "./Sidebar.vue";
+  export default {
+    name: "PageView",
+    components: {
+      Sidebar,
+    },
+  };
 </script>

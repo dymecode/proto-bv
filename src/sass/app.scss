@@ -1,2 +1,24 @@
 @charset "UTF-8";
 @import "variables";
+
+.navbar {
+  background-color: $color-alias-toolbar-background;
+  height: 4rem;
+  box-shadow: unset;
+}
+
+.page-view {
+  .view-sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 4rem;
+    z-index: 1000;
+    height: calc(100vh - 4rem);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    order: 0;
+  }
+
+  .view-content {
+    order: 1;
+  }
+}

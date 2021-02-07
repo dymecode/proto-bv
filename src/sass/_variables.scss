@@ -1,12 +1,22 @@
-@import './spectrum/colorGlobals';
-@import './spectrum/themeLight';
-@import './spectrum/colorAliases';
-@import './spectrum/colorSemantics';
+@import "./spectrum/colorGlobals";
+@import "./spectrum/themeLight";
+@import "./spectrum/colorAliases";
+@import "./spectrum/colorSemantics";
+
+$enable-caret: false;
+$enable-transitions: false;
 
 // Define variable defaults
 $body-bg: $color-alias-background-default;
 $body-color: $color-alias-text;
 
+$line-height-sm: 1.25;
+$border-color: $color-alias-border;
+
+$border-radius: 6px;
+$border-radius-lg:9px;
+$border-radius-sm:3px;
+
 // Then import Bootstrap an BootstrapVue SCSS files (order is important)
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
-@import 'node_modules/bootstrap-vue/src/index.scss';
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-vue/src/index.scss";
