@@ -6,9 +6,9 @@
 </template>
 
 <script>
+import Navbar from "../../components/Navbar.vue";
+import PageView from "../../components/PageView.vue";
 
-import Navbar from '../../components/Navbar.vue';
-import PageView from '../../components/PageView.vue';
 export default {
   name: "Main",
   components: { Navbar, PageView }

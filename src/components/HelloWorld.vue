@@ -9,9 +9,9 @@
       </li>
       <li>
         <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
-          rel="noopener"
+            href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
+            target="_blank"
+            rel="noopener"
         >eslint</a
         >
       </li>
@@ -19,16 +19,19 @@
     <h3>Essential Links</h3>
     <ul>
       <li>
-        <a href="https://getbootstrap.com/docs/4.6/getting-started/introduction/" target="_blank" rel="noopener">Bootstrap
-          4 Documentation</a>
+        <a
+            href="https://getbootstrap.com/docs/4.6/getting-started/introduction/"
+            target="_blank"
+            rel="noopener"
+        >Bootstrap 4 Documentation</a
+        >
       </li>
       <li>
-        <a href="https://bootstrap-vue.org/docs" target="_blank" rel="noopener">Bootstrap-Vue Documentation</a>
+        <a href="https://bootstrap-vue.org/docs" target="_blank" rel="noopener"
+        >Bootstrap-Vue Documentation</a
+        >
       </li>
-
-
     </ul>
-
   </div>
 </template>
 
@@ -40,21 +43,3 @@ export default {
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

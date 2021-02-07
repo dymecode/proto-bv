@@ -1,13 +1,11 @@
+@import "./spectrum/fontGlobals";
+
 @import "./spectrum/colorGlobals";
-@import "./spectrum/themeLight";
 @import "./spectrum/colorAliases";
 @import "./spectrum/colorSemantics";
 
 @import "./spectrum/dimensionGlobals";
 @import "./spectrum/dimensionAliases";
-
-@import "./spectrum/fontGlobals";
-@import "./spectrum/elementBody";
 
 $enable-caret: false;
 $enable-transitions: false;

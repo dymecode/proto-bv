@@ -2,9 +2,10 @@
 @import "variables";
 
 .navbar {
-  background-color: $color-alias-toolbar-background;
+  background-color: $color-alias-background-tertiary;
   height: 4rem;
   box-shadow: unset;
+  border-bottom: 2px solid $color-alias-appframe-border;
 }
 
 .page-view {
@@ -14,7 +15,7 @@
     top: 4rem;
     z-index: 1000;
     height: calc(100vh - 4rem);
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 2px solid $color-alias-appframe-border;
     order: 0;
   }
 
