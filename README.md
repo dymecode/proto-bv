@@ -1,11 +1,15 @@
 # proto-bv
 
+A VueJS prototyping lab with Bootstrap 4.
+
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```

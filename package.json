@@ -1,7 +1,16 @@
 {
   "name": "proto-bv",
   "version": "0.1.0",
+  "description": "A VueJS prototyping lab with Bootstrap 4.",
+  "author": {
+    "name": "Darren Yuen Ming Ee",
+    "email": "techops@dymecode.com"
+  },
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dymecode/proto-bv.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -24,7 +33,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.6.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^6.2.2",
