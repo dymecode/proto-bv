@@ -1,25 +1,31 @@
 @charset "UTF-8";
 @import "variables";
 
-.navbar {
-  background-color: $color-alias-background-tertiary;
-  height: 4rem;
-  box-shadow: unset;
-  border-bottom: 2px solid $color-alias-appframe-border;
-}
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
 
-.page-view {
-  .view-sidebar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 4rem;
-    z-index: 1000;
-    height: calc(100vh - 4rem);
-    border-right: 2px solid $color-alias-appframe-border;
-    order: 0;
+  .navbar {
+    background-color: $color-alias-background-tertiary;
+    height: 4rem;
+    box-shadow: unset;
+    border-bottom: 2px solid $color-alias-appframe-border;
   }
 
-  .view-content {
-    order: 1;
+  .page-view {
+    .view-sidebar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 4rem;
+      z-index: 1000;
+      height: calc(100vh - 4rem);
+      border-right: 2px solid $color-alias-appframe-border;
+      order: 0;
+    }
+
+    .view-content {
+      order: 1;
+    }
   }
 }
