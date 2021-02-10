@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import Sidebar from "./Sidebar";
-import ViewHeader from "./ViewHeader";
+import Sidebar from "./Sidebar.vue";
+import ViewHeader from "./ViewHeader.vue";
 
 export default {
   name: "PageView",

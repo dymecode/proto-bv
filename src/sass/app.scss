@@ -5,10 +5,12 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 0;
+  margin: 0;
+  overflow: hidden;
 
   .navbar {
     background-color: $color-alias-background-tertiary;
-    height: 4rem;
+    height: calc(4rem - 2px);
     box-shadow: unset;
     border-bottom: 2px solid $color-alias-appframe-border;
   }
