@@ -16,18 +16,45 @@ body {
   }
 
   .page-view {
+    width: 100vw;
+    height: calc(100vh - 64px - 32px);
+
     .view-sidebar {
       position: -webkit-sticky;
       position: sticky;
       top: 4rem;
       z-index: 1000;
-      height: calc(100vh - 4rem);
+      height: calc(100vh - 64px - 32px);
       border-right: 2px solid $color-alias-appframe-border;
       order: 0;
     }
 
     .view-content {
       order: 1;
+      height: calc(100vh - 64px - 32px);
+    }
+  }
+
+  .bottombar {
+    height: $dimension-alias-single-line-height;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1001;
+    background-color: $space-cadet;
+
+    padding: 0.25rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    .bar-item {
+      color: $color-alias-background-default;
+      font-size: 11px;
+      padding-left: 1.5rem;
+      line-height: 1;
     }
   }
 }
