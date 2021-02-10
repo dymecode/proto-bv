@@ -1,12 +1,11 @@
 {
   "name": "proto-bv",
   "version": "0.1.0",
-  "description": "A VueJS prototyping lab with Bootstrap 4.",
+  "description": "A BootstrapVue layout prototyping environment.",
   "author": {
     "name": "Darren Yuen Ming Ee",
     "email": "techops@dymecode.com"
   },
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/dymecode/proto-bv.git"
