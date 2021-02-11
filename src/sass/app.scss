@@ -7,6 +7,8 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 
   .navbar {
     background-color: $color-alias-background-tertiary;
@@ -21,10 +23,10 @@ body {
 
     .view-sidebar {
       position: -webkit-sticky;
-      position: sticky;
-      top: 4rem;
+      position: fixed;
+      top: 8rem;
       z-index: 1000;
-      height: calc(100vh - 64px - 32px);
+      height: calc(100vh - 64px - 64px - 32px);
       border-right: 2px solid $color-alias-appframe-border;
       order: 0;
     }
@@ -43,7 +45,7 @@ body {
     left: 2px;
     overflow: hidden;
     z-index: 1001;
-    background: linear-gradient(to right,$skobeloff,$russian-violet-2);
+    background: linear-gradient(to right, $skobeloff, $russian-violet-2);
 
     padding: 0.25rem 1.5rem;
     display: flex;
@@ -57,6 +59,7 @@ body {
       font-size: 11px;
       padding-left: 1.5rem;
       line-height: 1;
+      letter-spacing: 0.5px;
     }
     .bar-toggle {
       color: $color-alias-background-default;

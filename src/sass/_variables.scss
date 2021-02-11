@@ -8,7 +8,6 @@
 @import "./spectrum/dimensionGlobals";
 @import "./spectrum/dimensionAliases";
 
-
 $white: $color-global-gray-75;
 $gray-100: $color-global-gray-100;
 $gray-200: $color-global-gray-200;
@@ -20,14 +19,12 @@ $gray-700: $color-global-gray-700;
 $gray-800: $color-global-gray-800;
 $gray-900: $color-global-gray-900;
 
-
 $primary: $dark-purple;
 $secondary: $skobeloff;
 $success: $color-semantic-positive-default;
 $info: $color-semantic-informative-default;
 $warning: $color-semantic-notice-default;
 $danger: $color-semantic-negative-default;
-
 
 $enable-caret: false;
 $enable-rounded: false;
@@ -36,19 +33,15 @@ $enable-transitions: false;
 
 $enable-print-styles: false;
 
-
 $body-bg: $color-alias-background-default;
 $body-color: $color-alias-text;
-
 
 $link-color: $primary;
 
 $link-hover-color: $midnight-green-eagle-green-2;
 
-
 $line-height-lg: 1.6;
 $line-height-sm: 1.2;
-
 
 $border-color: $color-alias-border;
 
@@ -61,3 +54,5 @@ $component-active-bg: $secondary;
 // Then import Bootstrap an BootstrapVue SCSS files (order is important)
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 @import "node_modules/bootstrap-vue/src/index.scss";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");

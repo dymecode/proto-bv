@@ -18,7 +18,7 @@ export default {
     },
     item2: function () {
       return acron("lesms");
-    }
-  }
-}
+    },
+  },
+};
 </script>

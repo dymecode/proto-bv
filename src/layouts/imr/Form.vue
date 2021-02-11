@@ -2,7 +2,7 @@
   <div class="imr">
     <navbar></navbar>
     <view-header></view-header>
-    <page-view> </page-view>
+    <page-view></page-view>
     <bottombar></bottombar>
   </div>
 </template>
@@ -14,7 +14,7 @@ import Bottombar from "../../components/Bottombar.vue";
 import ViewHeader from "../../components/ViewHeader.vue";
 
 export default {
-  name: "Main",
+  name: "Form",
   components: { Navbar, PageView, Bottombar, ViewHeader },
 };
 </script>
