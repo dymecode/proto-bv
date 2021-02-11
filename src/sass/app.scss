@@ -37,24 +37,30 @@ body {
 
   .bottombar {
     height: $dimension-alias-single-line-height;
-    width: 100vw;
+    width: calc(100vw - 4px);
     position: fixed;
     bottom: 0;
+    left: 2px;
     overflow: hidden;
     z-index: 1001;
-    background-color: $space-cadet;
+    background: linear-gradient(to right,$skobeloff,$russian-violet-2);
 
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 1.5rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    border-radius: 0.25rem 0.25rem 0 0;
 
     .bar-item {
       color: $color-alias-background-default;
       font-size: 11px;
       padding-left: 1.5rem;
       line-height: 1;
+    }
+    .bar-toggle {
+      color: $color-alias-background-default;
+      margin: 0 auto 0 0;
     }
   }
 }
