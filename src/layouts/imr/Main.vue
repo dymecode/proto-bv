@@ -11,7 +11,7 @@
 import Navbar from "../../components/Navbar.vue";
 import PageView from "../../components/PageView.vue";
 import Bottombar from "../../components/Bottombar.vue";
-import ViewHeader from "../../components/ViewHeader.vue";
+import ViewHeader from "../../components/PageHeader.vue";
 
 export default {
   name: "Main",

@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img alt="dyme logo" src="../assets/logo.png"/>
     <h1>{{ msg }}</h1>
-    <div class="row mt-4">
+    <div class="row">
       <div class="col-6">
         <label class="heading">Layouts</label>
         <ul>
@@ -11,8 +11,8 @@
           </li>
           <li>
             <a
-              href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-              target="_blank"
+                href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
+                target="_blank"
               rel="noopener"
               >eslint</a
             >
