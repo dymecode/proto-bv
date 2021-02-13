@@ -10,7 +10,7 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#/layouts/imr">Home</b-nav-item>
-        <b-nav-item href="#/layouts/imr/form">Form</b-nav-item>
+        <b-nav-item href="#/layouts/imr/form" disabled>Form</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
     <!-- Right aligned nav items -->

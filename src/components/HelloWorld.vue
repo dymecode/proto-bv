@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <span class="hello-logo">
+    <span class="hello-logo mb-1">
       <img alt="dyme logo" src="../assets/logo.png" />
     </span>
     <h1 class="mb-4">{{ msg }}</h1>
