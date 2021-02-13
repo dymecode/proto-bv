@@ -2,6 +2,7 @@
 //import "mutationobserver-shim";
 
 import Vue from "vue";
+import "./plugins/vue-web-storage";
 import "./plugins/fontawesome";
 import "./plugins/bootstrap-vue";
 import "./plugins/vue-formulate";
