@@ -1,12 +1,15 @@
-@import "./spectrum/fontGlobals";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&display=swap");
+@import "./dictionary/fontGlobals";
 
-@import "./spectrum/colorGlobals";
-@import "./spectrum/colorAliases";
-@import "./spectrum/colorSemantics";
+@import "./dictionary/colorGlobals";
+@import "./dictionary/colorAliases";
+@import "./dictionary/colorSemantics";
 @import "./colorCustom";
 
-@import "./spectrum/dimensionGlobals";
-@import "./spectrum/dimensionAliases";
+@import "./dictionary/dimensionGlobals";
+@import "./dictionary/dimensionAliases";
 
 $white: $color-global-gray-75;
 $gray-100: $color-global-gray-100;
@@ -54,5 +57,3 @@ $component-active-bg: $secondary;
 // Then import Bootstrap an BootstrapVue SCSS files (order is important)
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 @import "node_modules/bootstrap-vue/src/index.scss";
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");

@@ -1,59 +1,44 @@
 @charset "UTF-8";
 @import "variables";
 
-body {
+.imr {
   width: 100vw;
   height: 100vh;
   padding: 0;
   margin: 0;
-  overflow: hidden;
   font-family: "Inter", sans-serif;
   font-weight: 400;
 
   .navbar {
     background-color: $color-alias-background-tertiary;
     width: 100vw;
-    height: calc(4rem - 2px);
+    height: 4rem;
     box-shadow: unset;
     border-bottom: 2px solid $color-alias-appframe-border;
   }
 
-  .page-header {
+  .content-tabs {
     width: 100vw;
-    height: 3.5rem;
+    height: calc(100vh - 6rem);
     padding-top: 0.5rem;
-  }
 
-  .page-title {
-    font-size: 1.5rem;
-    margin: 0 3rem 0 1.5rem;
-
-  }
-
-  .page-view {
-    width: 100vw;
-    height: 3.5rem;
-
-    .view-sidebar {
-      position: -webkit-sticky;
-      position: fixed;
-      top: 8rem;
-      z-index: 1000;
-      height: calc(100vh - 64px - 64px - 32px);
-      border-right: 2px solid $color-alias-appframe-border;
-      order: 0;
+    .page-title {
+      font-size: 1.5rem;
+      margin: 0 3rem 0 1.5rem;
     }
 
-    .view-content {
-      order: 1;
-      height: calc(100vh - 64px - 32px);
-    }
-  }
+    .tab-content {
+      padding-top: 1rem;
+      margin: 0 1rem;
 
-  .tab-content {
-    padding-top: 1rem;
-    margin: 0 1rem;
-    overflow-y: auto;
+      .tab-pane {
+        width: 100%;
+        height: calc(100vh - 11rem);
+        scrollbar-width: thin;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+    }
   }
 
   .bottombar {

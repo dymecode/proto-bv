@@ -1,6 +1,6 @@
-$font-global-family-base: adobe-clean, 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Trebuchet MS', 'Lucida Grande', sans-serif;
-$font-global-family-serif: adobe-clean-serif, 'Source Serif Pro', Georgia, serif;
-$font-global-family-code: 'Source Code Pro', Monaco, monospace;
+$font-global-family-base: "Inter", sans-serif;
+$font-global-family-serif: "Domine", serif;
+$font-global-family-code: "Fira Code", monospace;
 $font-global-weight-thin: 100;
 $font-global-weight-ultra-light: 200;
 $font-global-weight-light: 300;
@@ -20,4 +20,3 @@ $font-global-line-height-medium: 1.5;
 $font-global-line-height-small: 1.3;
 $font-global-multiplier-25: 0.25em;
 $font-global-multiplier-75: 0.75em;
-

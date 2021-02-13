@@ -17,7 +17,7 @@ export default {
       return acron("omg");
     },
     item2: function () {
-      return acron("lesms");
+      return acron("lmsms");
     },
   },
 };

@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
-    <img alt="dyme logo" src="../assets/logo.png"/>
-    <h1>{{ msg }}</h1>
+    <span class="hello-logo">
+      <img alt="dyme logo" src="../assets/logo.png" />
+    </span>
+    <h1 class="mb-4">{{ msg }}</h1>
     <div class="row">
       <div class="col-6">
         <label class="heading">Layouts</label>
@@ -9,25 +11,17 @@
           <li>
             <router-link to="/layouts/imr">IMR</router-link>
           </li>
-          <li>
-            <a
-                href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-                target="_blank"
-              rel="noopener"
-              >eslint</a
-            >
-          </li>
         </ul>
       </div>
       <div class="col-6">
-        <label class="heading">Links</label>
+        <label class="heading">Documentation</label>
         <ul>
           <li>
             <a
               href="https://getbootstrap.com/docs/4.6/getting-started/introduction/"
               target="_blank"
               rel="noopener"
-              >Bootstrap 4 Documentation</a
+              >Bootstrap 4</a
             >
           </li>
           <li>
@@ -35,7 +29,31 @@
               href="https://bootstrap-vue.org/docs"
               target="_blank"
               rel="noopener"
-              >Bootstrap-Vue Documentation</a
+              >Bootstrap-Vue</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://fontawesome.com/icons?d=gallery"
+              target="_blank"
+              rel="noopener"
+              >Fontawesome Icons</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://fontawesome.com/icons?d=gallery"
+              target="_blank"
+              rel="noopener"
+              >Vue-Web-Storage</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://fontawesome.com/icons?d=gallery"
+              target="_blank"
+              rel="noopener"
+              >Vue-Formulate</a
             >
           </li>
         </ul>
@@ -59,24 +77,38 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
   color: #595959;
+  width: 46vw;
+  font-size: 1rem;
+  font-family: "Domine", serif;
+  font-weight: 300;
+  font-kerning: auto;
+  padding: 1rem;
+
+  .hello-logo {
+    display: inline-block;
+    background-color: #ffffffee;
+    border-radius: 5em;
+    padding: 0.75em;
+    img {
+      width: 4em;
+    }
+  }
 
   .heading {
     text-align: left;
-    text-transform: uppercase;
-    letter-spacing: 0.25px;
-    font-size: 0.875rem;
     width: 100%;
+    font-weight: 700;
+    color: lighten(#595959, 5%);
   }
   ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 0.5em;
     text-align: left;
     li {
-      line-height: 1.4;
-      margin-bottom: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.5em;
     }
   }
 }
