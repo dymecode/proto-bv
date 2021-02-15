@@ -191,6 +191,14 @@
     >
       <pre>{{ infoModal.content }}</pre>
     </b-modal>
+
+    <b-modal
+      id="workspace-filters"
+      :title="workspace - filters"
+      @hide="resetFilterModal"
+    >
+      <pre>{{ filterModal.content }}</pre>
+    </b-modal>
   </b-container>
 </template>
 
@@ -270,6 +278,11 @@ export default {
         title: "",
         content: "",
       },
+      filterModal: {
+        id: "filter-modal",
+        title: "",
+        content: "",
+      },
     };
   },
   computed: {
@@ -292,9 +305,18 @@ export default {
       this.infoModal.content = JSON.stringify(item, null, 2);
       this.$root.$emit("bv::show::modal", this.infoModal.id, button);
     },
+    filter(item, index, button) {
+      this.filterModal.title = `Row index: ${index}`;
+      this.filterModal.content = JSON.stringify(item, null, 2);
+      this.$root.$emit("bv::show::modal", this.filterModal.id, button);
+    },
     resetInfoModal() {
       this.infoModal.title = "";
       this.infoModal.content = "";
+    },
+    resetFilterModal() {
+      this.filterModal.title = "";
+      this.filterModal.content = "";
     },
     onFiltered(filteredItems) {
       // Trigger pagination to update the number of buttons/pages due to filtering

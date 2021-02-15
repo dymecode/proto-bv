@@ -5,7 +5,10 @@
     </span>
     <h1 class="mb-4">{{ msg }}</h1>
     <div class="row">
-      <div class="col-6">
+      <div class="col-4">
+        <p>A template for UI layout prototyping with VueJS on BootstrapVue</p>
+      </div>
+      <div class="col-4">
         <label class="heading">Layouts</label>
         <ul>
           <li>
@@ -13,7 +16,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-6">
+      <div class="col-4">
         <label class="heading">Documentation</label>
         <ul>
           <li>

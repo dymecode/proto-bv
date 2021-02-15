@@ -23,7 +23,7 @@ $gray-800: $color-global-gray-800;
 $gray-900: $color-global-gray-900;
 
 $primary: $dark-purple;
-$secondary: $skobeloff;
+$secondary: $midnight-green;
 $success: $color-semantic-positive-default;
 $info: $color-semantic-informative-default;
 $warning: $color-semantic-notice-default;
@@ -31,9 +31,7 @@ $danger: $color-semantic-negative-default;
 
 $enable-caret: false;
 $enable-rounded: false;
-
-$enable-transitions: false;
-
+$enable-transitions: true;
 $enable-print-styles: false;
 
 $body-bg: $color-alias-background-default;
@@ -41,7 +39,7 @@ $body-color: $color-alias-text;
 
 $link-color: $primary;
 
-$link-hover-color: $midnight-green-eagle-green-2;
+$link-hover-color: $midnight-green-2;
 
 $line-height-lg: 1.6;
 $line-height-sm: 1.2;

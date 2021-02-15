@@ -1,9 +1,7 @@
 <template>
   <div class="brand-footer row">
     <div class="col-4">
-      <span class="footer-logo mb-1">
-        <img alt="dyme logo" src="../assets/logo.png" />
-      </span>
+      <b-img v-bind="placeHolderAttribs"></b-img>
     </div>
     <div class="col-4"></div>
     <div class="col-4"></div>
@@ -13,5 +11,16 @@
 <script>
 export default {
   name: "BrandFooter",
+  data() {
+    return {
+      placeHolderAttribs: {
+        blank: true,
+        width: 75,
+        height: 75,
+        class: "m1",
+        blankColor: "rgba(255, 255, 255, 0.5)",
+      },
+    };
+  },
 };
 </script>
