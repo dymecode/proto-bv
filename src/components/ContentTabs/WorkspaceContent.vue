@@ -2,102 +2,50 @@
   <b-container fluid>
     <!-- User Interface controls -->
     <b-row>
-      <b-col lg="6" class="my-1">
-        <b-form-group
-          label="Sort"
-          label-for="sort-by-select"
-          label-cols-sm="3"
-          label-align-sm="right"
-          label-size="sm"
-          class="mb-0"
-          v-slot="{ ariaDescribedby }"
-        >
-          <b-input-group size="sm">
-            <b-form-select
-              id="sort-by-select"
-              v-model="sortBy"
-              :options="sortOptions"
-              :aria-describedby="ariaDescribedby"
-              class="w-75"
-            >
-              <template #first>
-                <option value="">-- none --</option>
-              </template>
-            </b-form-select>
 
-            <b-form-select
-              v-model="sortDesc"
-              :disabled="!sortBy"
-              :aria-describedby="ariaDescribedby"
-              size="sm"
-              class="w-25"
-            >
-              <option :value="false">Asc</option>
-              <option :value="true">Desc</option>
-            </b-form-select>
-          </b-input-group>
-        </b-form-group>
-      </b-col>
 
-      <b-col lg="6" class="my-1">
+      <b-col class="my-1" lg="6">
         <b-form-group
-          label="Initial sort"
-          label-for="initial-sort-select"
-          label-cols-sm="3"
-          label-align-sm="right"
-          label-size="sm"
-          class="mb-0"
-        >
-          <b-form-select
-            id="initial-sort-select"
-            v-model="sortDirection"
-            :options="['asc', 'desc', 'last']"
-            size="sm"
-          ></b-form-select>
-        </b-form-group>
-      </b-col>
-
-      <b-col lg="6" class="my-1">
-        <b-form-group
-          label="Filter"
-          label-for="filter-input"
-          label-cols-sm="3"
-          label-align-sm="right"
-          label-size="sm"
-          class="mb-0"
+            class="mb-0"
+            label="Filter"
+            label-align-sm="right"
+            label-cols-sm="3"
+            label-for="filter-input"
+            label-size="sm"
         >
           <b-input-group size="sm">
             <b-form-input
-              id="filter-input"
-              v-model="filter"
-              type="search"
-              placeholder="Type to Search"
+                id="filter-input"
+                v-model="filterInput"
+                placeholder="Type to Search"
+                type="search"
             ></b-form-input>
 
             <b-input-group-append>
-              <b-button :disabled="!filter" @click="filter = ''"
-                >Clear</b-button
+              <b-button :disabled="!filterInput" @click="filterInput = ''"
+              >Clear
+              </b-button
               >
             </b-input-group-append>
           </b-input-group>
         </b-form-group>
       </b-col>
 
-      <b-col lg="6" class="my-1">
+      <b-col class="my-1" lg="6">
         <b-form-group
-          v-model="sortDirection"
-          label="Filter On"
-          description="Leave all unchecked to filter on all data"
-          label-cols-sm="3"
-          label-align-sm="right"
-          label-size="sm"
-          class="mb-0"
-          v-slot="{ ariaDescribedby }"
+            v-slot="{ ariaDescribedby }"
+            v-model="sortDirection"
+            class="mb-0"
+            description="Leave all unchecked to filter on all data"
+            label="Filter On"
+            label-align-sm="right"
+            label-cols-sm="3"
+            label-size="sm"
         >
           <b-form-checkbox-group
-            v-model="filterOn"
-            :aria-describedby="ariaDescribedby"
-            class="mt-1"
+              v-model="filterOn"
+              :aria-describedby="ariaDescribedby"
+              class="mt-1"
           >
             <b-form-checkbox value="name">Name</b-form-checkbox>
             <b-form-checkbox value="age">Age</b-form-checkbox>
@@ -106,53 +54,24 @@
         </b-form-group>
       </b-col>
 
-      <b-col sm="5" md="6" class="my-1">
-        <b-form-group
-          label="Per page"
-          label-for="per-page-select"
-          label-cols-sm="6"
-          label-cols-md="4"
-          label-cols-lg="3"
-          label-align-sm="right"
-          label-size="sm"
-          class="mb-0"
-        >
-          <b-form-select
-            id="per-page-select"
-            v-model="perPage"
-            :options="pageOptions"
-            size="sm"
-          ></b-form-select>
-        </b-form-group>
-      </b-col>
 
-      <b-col sm="7" md="6" class="my-1">
-        <b-pagination
-          v-model="currentPage"
-          :total-rows="totalRows"
-          :per-page="perPage"
-          align="fill"
-          size="sm"
-          class="my-0"
-        ></b-pagination>
-      </b-col>
     </b-row>
 
     <!-- Main table element -->
     <b-table
-      :items="items"
-      :fields="fields"
-      :current-page="currentPage"
-      :per-page="perPage"
-      :filter="filter"
-      :filter-included-fields="filterOn"
-      :sort-by.sync="sortBy"
-      :sort-desc.sync="sortDesc"
-      :sort-direction="sortDirection"
-      stacked="md"
-      show-empty
-      small
-      @filtered="onFiltered"
+        :current-page="currentPage"
+        :fields="fields"
+        :filter="filterInput"
+        :filter-included-fields="filterOn"
+        :items="items"
+        :per-page="perPage"
+        :sort-by.sync="sortBy"
+        :sort-desc.sync="sortDesc"
+        :sort-direction="sortDirection"
+        show-empty
+        small
+        stacked="md"
+        @filtered="onFiltered"
     >
       <template #cell(name)="row">
         {{ row.value.first }} {{ row.value.last }}
@@ -160,9 +79,9 @@
 
       <template #cell(actions)="row">
         <b-button
-          size="sm"
-          @click="info(row.item, row.index, $event.target)"
-          class="mr-1"
+            class="mr-1"
+            size="sm"
+            @click="info(row.item, row.index, $event.target)"
         >
           Info modal
         </b-button>
@@ -182,20 +101,54 @@
       </template>
     </b-table>
 
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <b-input-group
+              append="per page"
+              class="mb-0"
+              size="sm"
+          >
+            <b-form-select
+                id="per-page-select"
+                v-model="perPage"
+                :options="pageOptions"
+                size="sm"
+            ></b-form-select>
+          </b-input-group>
+        </div>
+
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <b-pagination
+              v-model="currentPage"
+              :per-page="perPage"
+              :total-rows="totalRows"
+              align="right"
+              class="my-0"
+              size="sm"
+          ></b-pagination>
+        </div>
+      </div>
+
+
+    </div>
+
     <!-- Info modal -->
     <b-modal
-      :id="infoModal.id"
-      :title="infoModal.title"
-      ok-only
-      @hide="resetInfoModal"
+        :id="infoModal.id"
+        :title="infoModal.title"
+        ok-only
+        @hide="resetInfoModal"
     >
       <pre>{{ infoModal.content }}</pre>
     </b-modal>
 
     <b-modal
-      id="workspace-filters"
-      :title="workspace - filters"
-      @hide="resetFilterModal"
+        id="workspace-filters"
+        title="workspace-filters"
+        @hide="resetFilterModal"
     >
       <pre>{{ filterModal.content }}</pre>
     </b-modal>
@@ -255,7 +208,7 @@ export default {
         {
           key: "isActive",
           label: "Is Active",
-          formatter: (value, key, item) => {
+          formatter: (value) => {
             return value ? "Yes" : "No";
           },
           sortable: true,
@@ -267,11 +220,11 @@ export default {
       totalRows: 1,
       currentPage: 1,
       perPage: 5,
-      pageOptions: [5, 10, 15, { value: 100, text: "Show a lot" }],
+      pageOptions: [ 5, 10, 15, { value: 100, text: "Show a lot" } ],
       sortBy: "",
       sortDesc: false,
       sortDirection: "asc",
-      filter: null,
+      filterInput: null,
       filterOn: [],
       infoModal: {
         id: "info-modal",
@@ -289,10 +242,10 @@ export default {
     sortOptions() {
       // Create an options list from our fields
       return this.fields
-        .filter((f) => f.sortable)
-        .map((f) => {
-          return { text: f.label, value: f.key };
-        });
+      .filter((f) => f.sortable)
+      .map((f) => {
+        return { text: f.label, value: f.key };
+      });
     },
   },
   mounted() {
