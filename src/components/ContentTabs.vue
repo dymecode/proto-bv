@@ -1,7 +1,7 @@
 <template>
   <div class="content-tabs">
-    <b-tabs lazy>
-      <b-tab title="Dashboard" active>
+    <b-tabs lazy v-model="tabIndex">
+      <b-tab title="Dashboard">
         <dashboard-content></dashboard-content>
       </b-tab>
       <b-tab title="Workspace">
@@ -25,8 +25,8 @@
 
 <script>
 import DashboardContent from "./ContentTabs/DashboardContent.vue";
-import DatasourceContent from './ContentTabs/DatasourceContent.vue';
-import SettingsContent from './ContentTabs/SettingsContent.vue';
+import DatasourceContent from "./ContentTabs/DatasourceContent.vue";
+import SettingsContent from "./ContentTabs/SettingsContent.vue";
 import WorkspaceContent from "./ContentTabs/WorkspaceContent.vue";
 export default {
   name: "ContentTabs",
@@ -34,8 +34,17 @@ export default {
     DashboardContent,
     WorkspaceContent,
     DatasourceContent,
+    SettingsContent,
+  },
+  computed: {
+    tabIndex: {
+      get: function () {
+        return this.$localStorage.get("main.tabIndex", 0);
+      },
+      set: function (newValue) {
+        this.$localStorage.get("main.tabIndex", newValue);
+      },
+    },
   },
 };
 </script>
-
-SettingsContent
