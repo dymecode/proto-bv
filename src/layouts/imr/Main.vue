@@ -9,7 +9,7 @@
 <script>
 import Navbar from "../../components/Navbar.vue";
 import Bottombar from "../../components/Bottombar.vue";
-import ContentTabs from "../../components/ContentTabs.vue";
+import ContentTabs from "../../components/ContentTabs/ContentTabs.vue";
 
 export default {
   name: "Main",

@@ -24,17 +24,18 @@
 </template>
 
 <script>
-import DashboardContent from "./ContentTabs/DashboardContent.vue";
-import DatasourceContent from "./ContentTabs/DatasourceContent.vue";
-import SettingsContent from "./ContentTabs/SettingsContent.vue";
-import WorkspaceContent from "./ContentTabs/WorkspaceContent.vue";
+import DashboardContent from "./DashboardContent.vue";
+import DatasourceContent from "./DatasourceContent.vue";
+import SettingsContent from "./SettingsContent.vue";
+import WorkspaceContent from "./WorkspaceContent.vue";
+
 export default {
   name: "ContentTabs",
   components: {
     DashboardContent,
     WorkspaceContent,
     DatasourceContent,
-    SettingsContent,
+    SettingsContent
   },
   computed: {
     tabIndex: {
@@ -43,8 +44,8 @@ export default {
       },
       set: function (newValue) {
         this.$localStorage.get("main.tabIndex", newValue);
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
