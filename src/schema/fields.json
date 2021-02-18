@@ -1,22 +1,20 @@
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/dymecode/proto-bv/src/schema/fields.json#",
-  "title": "IMR field specs",
-  "description": "Defines the required structure of object properties when used as a form/table field.",
-  "type": "object",
-  "properties": {
-    "created_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "priority": {
-      "type": "string",
-      "enum": ["P1", "P2"]
-    },
-    "number": {
-      "type": "string",
-      "format": "^INCd+$"
-    }
+[
+  { "key": "actions", "label": "", "sticky": "true" },
+  {
+    "key": "id",
+    "label": "id",
+    "sortable": "true",
+    "stickyColumn": "true",
+    "isRowHeader": "true"
   },
-  "required": ["number"]
-}
+  { "key": "pn", "label": "pn", "sortable": "true" },
+  { "key": "ci", "label": "ci", "sortable": "true" },
+  { "key": "cat", "label": "cat", "sortable": "true" },
+  { "key": "desc", "label": "desc", "sortable": "true" },
+  { "key": "osl", "label": "osl", "sortable": "true" },
+  { "key": "tz", "label": "tz", "sortable": "true" },
+  { "key": "dts", "label": "dts", "sortable": "true" },
+  { "key": "grp", "label": "grp", "sortable": "true" },
+  { "key": "du", "label": "du", "sortable": "true" },
+  { "key": "yn", "label": "yn", "sortable": "true" }
+]
