@@ -55,10 +55,10 @@
     <!-- Main table element -->
     <b-table
       :current-page="currentPage"
-      :fields="xfields"
+      :fields="fields"
       :filter="filterInput"
       :filter-included-fields="filterOn"
-      :items="xitems"
+      :items="items"
       :per-page="perPage"
       responsive
       :sort-by.sync="sortBy"
@@ -71,11 +71,9 @@
       foot-variant="danger"
       head-row-variant="info"
       hover
-      :id="id"
       no-border-collapse
       no-sort-reset
       outlined
-      :primary-key="id"
       striped
       @filtered="onFiltered"
     >
@@ -107,28 +105,21 @@
         </b-card>
       </template>
 
-      <template #bottom-row>
-        <b-td>{{ xfields }}</b-td>
-        <b-td>{{ columns }}</b-td>
-      </template>
-
-      <template #head(cat)>
-        <b-button size="sm">hi</b-button>
+      <template #head(osl)="data">
+        <div>{{ data.label }}</div>
+        <b-select size="sm" :options="['true', 'false']"></b-select>
       </template>
 
       <template #thead-top>
         <b-tr>
-          <b-th></b-th>
-          <b-td colspan="3">this is this</b-td>
-          <b-td colspan="4">that is that</b-td>
-        </b-tr>
-        <b-tr>
-          <template v-for="(col, index) in xfields">
+          <template v-for="(col, index) in fields">
             <b-td :key="index">
-              <b-dropdown :id="'dropdown-form-' + index" class="m-2">
-                <template #button-content>
-                  <fa-icon icon="filter" size="lg"></fa-icon>
-                </template>
+              <b-dropdown
+                :id="'dropdown-form-' + index"
+                size="sm"
+                split
+                text="Small Split"
+              >
                 <b-dropdown-form>
                   <b-form-group
                     label="Email"
@@ -220,64 +211,6 @@ export default {
   name: "WorkspaceContent",
   data() {
     return {
-      items: [
-        {
-          isActive: true,
-          age: 40,
-          name: { first: "Dickerson", last: "Macdonald" },
-        },
-        { isActive: false, age: 21, name: { first: "Larsen", last: "Shaw" } },
-        {
-          isActive: false,
-          age: 9,
-          name: { first: "Mini", last: "Navarro" },
-          _rowVariant: "success",
-        },
-        { isActive: false, age: 89, name: { first: "Geneva", last: "Wilson" } },
-        { isActive: true, age: 38, name: { first: "Jami", last: "Carney" } },
-        { isActive: false, age: 27, name: { first: "Essie", last: "Dunlap" } },
-        { isActive: true, age: 40, name: { first: "Thor", last: "Macdonald" } },
-        {
-          isActive: true,
-          age: 87,
-          name: { first: "Larsen", last: "Shaw" },
-          _cellVariants: { age: "danger", isActive: "warning" },
-        },
-        { isActive: false, age: 26, name: { first: "Mitzi", last: "Navarro" } },
-        {
-          isActive: false,
-          age: 22,
-          name: { first: "Genevieve", last: "Wilson" },
-        },
-        { isActive: true, age: 38, name: { first: "John", last: "Carney" } },
-        { isActive: false, age: 29, name: { first: "Dick", last: "Dunlap" } },
-      ],
-      fields: [
-        {
-          key: "name",
-          label: "Person full name",
-          sortable: true,
-          sortDirection: "desc",
-        },
-        {
-          key: "age",
-          label: "Person age",
-          sortable: true,
-          class: "text-center",
-        },
-        {
-          key: "isActive",
-          label: "Is Active",
-          formatter: (value) => {
-            return value ? "Yes" : "No";
-          },
-          sortable: true,
-          sortByFormatted: true,
-          filterByFormatted: true,
-        },
-        { key: "actions", label: "Actions" },
-      ],
-
       currentPage: 1,
       perPage: 5,
       pageOptions: [5, 10, 15, { value: 100, text: "Show a lot" }],
@@ -296,13 +229,13 @@ export default {
         title: "",
         content: "",
       },
-      xitems: mockData,
-      xfields: fieldSpec,
+      items: mockData,
+      fields: fieldSpec,
     };
   },
   computed: {
     totalRows() {
-      return this.xitems.length;
+      return this.items.length;
     },
     sortOptions() {
       // Create an options list from our fields

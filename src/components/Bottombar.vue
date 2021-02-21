@@ -4,8 +4,10 @@
       <a class="bar-toggle" @click="toggleDrawer()">
         <fa-icon :icon="drawerClass('icon')" fixed-width></fa-icon>
       </a>
-      <div class="bar-item">{{ item1 | implodeArray }}</div>
-      <div class="bar-item">{{ item2 | implodeArray }}</div>
+      <div class="bar-item">
+        {{ acronymMaker("omg") }}
+      </div>
+      <div class="bar-item">{{ wordYall }}</div>
     </div>
     <div class="drawer-content">
       <brand-footer></brand-footer>
@@ -16,23 +18,30 @@
 <script>
 import BrandFooter from "./BrandFooter.vue";
 const acron = require("acron");
+const Sentencer = require("sentencer");
 export default {
   name: "Bottombar",
   components: { BrandFooter },
-  computed: {
-    item1: function () {
-      return acron("omg");
-    },
-    item2: function () {
-      return acron("lmsms");
-    },
-  },
   data() {
     return {
       showDrawer: false,
     };
   },
+  computed: {
+    wordYall: function () {
+      let gen = Sentencer.make("{{ an_adjective }} {{ noun }}.");
+      return gen.charAt(0).toUpperCase() + gen.slice(1) + " ";
+    },
+  },
   methods: {
+    acronymMaker(string) {
+      let result = "";
+      let words = acron(string);
+      words.forEach((word) => {
+        result += word.charAt(0).toUpperCase() + word.slice(1) + " ";
+      });
+      return result;
+    },
     toggleDrawer() {
       this.showDrawer = !this.showDrawer;
     },
