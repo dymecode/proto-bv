@@ -1,15 +1,15 @@
 <template>
-  <b-container fluid>
+  <b-container fluid class="workspace">
     <!-- User Interface controls -->
     <b-row>
       <b-col class="my-1" lg="6">
         <b-form-group
-          class="mb-0"
-          label="Filter"
-          label-align-sm="right"
-          label-cols-sm="3"
-          label-for="filter-input"
-          label-size="sm"
+            class="mb-0"
+            label="Filter"
+            label-align-sm="right"
+            label-cols-sm="3"
+            label-for="filter-input"
+            label-size="sm"
         >
           <b-input-group size="sm">
             <b-form-input
@@ -54,28 +54,25 @@
 
     <!-- Main table element -->
     <b-table
-      :current-page="currentPage"
-      :fields="fields"
-      :filter="filterInput"
-      :filter-included-fields="filterOn"
-      :items="items"
-      :per-page="perPage"
-      responsive
-      :sort-by.sync="sortBy"
-      :sort-desc.sync="sortDesc"
-      :sort-direction="sortDirection"
-      show-empty
-      sticky-header="30rem"
-      fixed
-      foot-clone
-      foot-variant="danger"
-      head-row-variant="info"
-      hover
-      no-border-collapse
-      no-sort-reset
-      outlined
-      striped
-      @filtered="onFiltered"
+        class="workspace-table"
+        :current-page="currentPage"
+        :fields="fields"
+        :filter="filterInput"
+        :filter-included-fields="filterOn"
+        :items="items"
+        :per-page="perPage"
+        responsive
+        :sort-by.sync="sortBy"
+        :sort-desc.sync="sortDesc"
+        :sort-direction="sortDirection"
+        show-empty
+        :sticky-header="stickyHeight"
+        fixed
+        hover
+        no-border-collapse
+        no-sort-reset
+        striped
+        @filtered="onFiltered"
     >
       <template #cell(actions)="row">
         <a
@@ -213,7 +210,7 @@ export default {
     return {
       currentPage: 1,
       perPage: 5,
-      pageOptions: [5, 10, 15, { value: 100, text: "Show a lot" }],
+      pageOptions: [ 5, 10, 15 ],
       sortBy: "dts",
       sortDesc: false,
       sortDirection: "asc",
@@ -237,13 +234,20 @@ export default {
     totalRows() {
       return this.items.length;
     },
+    stickyHeight() {
+      let h = window.innerHeight;
+      return h - 288 + "px";
+    },
+    pageHeight() {
+      return window.innerHeight;
+    },
     sortOptions() {
       // Create an options list from our fields
       return this.fields
-        .filter((f) => f.sortable)
-        .map((f) => {
-          return { text: f.label, value: f.key };
-        });
+      .filter((f) => f.sortable)
+      .map((f) => {
+        return { text: f.label, value: f.key };
+      });
     },
   },
   mounted() {

@@ -42,6 +42,36 @@
         overflow-y: auto;
         overflow-x: hidden;
 
+        .workspace {
+          width: 100%;
+
+          .workspace-table {
+            width: calc(100vw - 60px);
+            overflow: auto;
+            height: calc(100vh - 288px);
+            border: 1px solid $color-alias-appframe-border;
+            table-layout: fixed;
+
+            .table-cell {
+              overflow: hidden;
+              white-space: nowrap;
+              font-size: 0.875em;
+
+              &.cell-sm {
+                width: 80px;
+              }
+
+              &.cell-md {
+                width: 160px;
+              }
+
+              &.cell-lg {
+                width: 240px;
+              }
+            }
+          }
+        }
+
         .level {
           width: 100%;
           display: flex;
@@ -59,7 +89,6 @@
               margin-left: 1rem;
             }
           }
-
         }
       }
     }
@@ -74,7 +103,7 @@
     overflow: hidden;
     z-index: 1001;
     background-color: $midnight-green;
-    border-radius: .25rem .25rem 0 0;
+    border-radius: 0.25rem 0.25rem 0 0;
 
     transition-property: all;
     transition-duration: 0.5s;
@@ -128,7 +157,7 @@
         }
 
         .logo-font {
-          font-family: 'Geostar Fill', cursive;
+          font-family: "Geostar Fill", cursive;
         }
       }
     }
