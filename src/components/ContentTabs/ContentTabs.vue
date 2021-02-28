@@ -27,7 +27,7 @@
 import DashboardContent from "./DashboardContent.vue";
 import DatasourceContent from "./DatasourceContent.vue";
 import SettingsContent from "./SettingsContent.vue";
-import WorkspaceContent from "./WorkspaceContent.vue";
+import WorkspaceContent from "./WorkspaceContent/WorkspaceContent.vue";
 
 export default {
   name: "ContentTabs",

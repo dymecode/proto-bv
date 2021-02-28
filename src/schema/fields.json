@@ -2,74 +2,72 @@
   {
     "key": "actions",
     "label": "",
-    "stickyColumn": true,
-    "tdClass": "table-cell cell-md"
+    "stickyColumn": true
   },
   {
     "key": "id",
     "label": "id",
     "sortable": true,
-    "tdClass": "table-cell cell-sm"
+    "tdClass": "table-cell"
   },
   {
     "key": "pn",
     "label": "pn",
     "sortable": true,
-    "tdClass": "table-cell cell-sm"
+    "tdClass": "table-cell"
   },
   {
     "key": "ci",
     "label": "ci",
     "sortable": true,
-    "tdClass": "table-cell cell-sm"
+    "tdClass": "table-cell"
   },
   {
     "key": "cat",
     "label": "cat",
     "sortable": true,
-    "tdClass": "table-cell cell-sm"
+    "tdClass": "table-cell"
   },
   {
     "key": "desc",
     "label": "desc",
     "sortable": true,
-    "tdClass": "table-cell cell-lg",
-    "thClass": "table-cell cell-lg"
+    "tdClass": "table-cell"
   },
   {
     "key": "osl",
     "label": "osl",
     "sortable": true,
-    "tdClass": "table-cell cell-sm"
+    "tdClass": "table-cell"
   },
   {
     "key": "tz",
     "label": "tz",
     "sortable": true,
-    "tdClass": "table-cell cell-lg"
+    "tdClass": "table-cell"
   },
   {
     "key": "dts",
     "label": "dts",
     "sortable": true,
-    "tdClass": "table-cell cell-md"
+    "tdClass": "table-cell"
   },
   {
     "key": "grp",
     "label": "grp",
     "sortable": true,
-    "tdClass": "table-cell cell-lg"
+    "tdClass": "table-cell"
   },
   {
     "key": "du",
     "label": "du",
     "sortable": true,
-    "tdClass": "table-cell cell-sm"
+    "tdClass": "table-cell"
   },
   {
     "key": "yn",
     "label": "yn",
     "sortable": true,
-    "tdClass": "table-cell cell-sm"
+    "tdClass": "table-cell"
   }
 ]

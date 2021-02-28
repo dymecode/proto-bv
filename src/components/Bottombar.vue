@@ -7,7 +7,6 @@
       <div class="bar-item">
         {{ acronymMaker("omg") }}
       </div>
-      <div class="bar-item">{{ wordYall }}</div>
     </div>
     <div class="drawer-content">
       <brand-footer></brand-footer>
@@ -24,7 +23,7 @@ export default {
   components: { BrandFooter },
   data() {
     return {
-      showDrawer: false,
+      showDrawer: false
     };
   },
   methods: {
@@ -42,7 +41,7 @@ export default {
             return "";
         }
       } else {
-        switch (element) {
+        switch ( element ) {
           case "panel":
             return "bottom-drawer";
           case "icon":
@@ -51,7 +50,7 @@ export default {
             return "";
         }
       }
-    },
-  },
+    }
+  }
 };
 </script>

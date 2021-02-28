@@ -1,21 +1,15 @@
-const acron = require("acron");
-const Sentencer = require("sentencer");
+const acronym = require("acron");
 
 export default {
-  computed: {
-    wordYall: function () {
-      let gen = Sentencer.make("{{ an_adjective }} {{ noun }}.");
-      return gen.charAt(0).toUpperCase() + gen.slice(1) + " ";
-    },
-  },
+  computed: {},
   methods: {
     acronymMaker(string) {
       let result = "";
-      let words = acron(string);
-      words.forEach((word) => {
+      let words = acronym(string);
+      words.forEach(word => {
         result += word.charAt(0).toUpperCase() + word.slice(1) + " ";
       });
       return result;
     }
   }
-}
+};

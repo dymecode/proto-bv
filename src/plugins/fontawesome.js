@@ -1,9 +1,39 @@
 import Vue from "vue";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDoubleLeft,
+  faAngleDoubleRight,
+  faAngleDown,
+  faAngleLeft,
+  faAngleRight,
+  faBars,
+  faChevronDown,
+  faChevronLeft,
+  faChevronRight,
+  faChevronUp,
+  faEye,
+  faQuestionCircle,
+  faLanguage,
+  faUserCircle
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(fas);
+library.add(
+  faAngleDoubleLeft,
+  faAngleDoubleRight,
+  faAngleDown,
+  faAngleLeft,
+  faAngleRight,
+  faBars,
+  faChevronDown,
+  faChevronLeft,
+  faChevronRight,
+  faChevronUp,
+  faEye,
+  faQuestionCircle,
+  faLanguage,
+  faUserCircle
+);
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 

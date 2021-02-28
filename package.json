@@ -25,7 +25,6 @@
     "acron": "^1.0.5",
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
-    "sentencer": "^0.2.1",
     "vue": "^2.6.11",
     "vue-good-table": "^2.21.3",
     "vue-router": "^3.2.0",

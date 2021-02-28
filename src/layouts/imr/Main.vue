@@ -13,6 +13,6 @@ import ContentTabs from "../../components/ContentTabs/ContentTabs.vue";
 
 export default {
   name: "Main",
-  components: { Navbar, Bottombar, ContentTabs },
+  components: { Navbar, Bottombar, ContentTabs }
 };
 </script>
