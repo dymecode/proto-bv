@@ -1,4 +1,4 @@
 module.exports = {
-   filenameHashing: false,
-    lintOnSave: 'warning'
-}
+  filenameHashing: false,
+  lintOnSave: "warning",
+};
