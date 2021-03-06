@@ -43,6 +43,39 @@
         .workspace {
           width: 100%;
 
+          .sidebar-right {
+            .b-sidebar {
+              height: calc(100vh - 6rem - 0.25rem);
+              top: 4rem;
+              border-top: 1px solid v.$color-alias-appframe-border;
+              border-left: 1px solid v.$color-alias-appframe-border;
+              border-bottom: 1px solid v.$color-alias-appframe-border;
+              border-radius: 0.5rem 0 0 0.5rem;
+
+              .b-sidebar-body {
+                height: calc(100vh - 6rem - 0.25rem - 8rem);
+                .card {
+                  height: 48%;
+                  .list-group {
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    .list-group-item {
+                      font-size: 0.875rem;
+                      padding: 0.25rem 1.25rem;
+                    }
+                  }
+                }
+              }
+              .b-sidebar-header {
+                height: 3rem;
+              }
+
+              .b-sidebar-footer {
+                height: 5rem;
+              }
+            }
+          }
+
           .workspace-header {
             height: 3.5rem;
           }
@@ -54,16 +87,14 @@
             scrollbar-width: thin;
 
             table {
-              width: calc(100vw - 60px);
+              width: calc(100vw - 30px);
 
               thead {
-
-                th {
-                  min-width: 5rem;
-                  max-width: 20rem;
-                  height: 2rem;
-
+                th.table-b-table-default {
                   .workspace-thead {
+                    min-width: 10rem;
+                    max-width: 20rem;
+                    height: 2rem;
                     width: 100%;
                     display: flex;
                     flex-direction: row;
@@ -81,7 +112,10 @@
               .table-cell {
                 overflow: hidden;
                 white-space: nowrap;
+                text-overflow: ellipsis;
                 font-size: 0.75rem;
+                min-width: 10rem;
+                max-width: 20rem;
               }
 
               .b-dropdown-form {
@@ -102,14 +136,38 @@
           align-items: center;
 
           .level-left {
+            display: flex;
+            align-items: center;
+
             .level-item {
-              margin-right: 1rem;
+              margin-right: 1.5rem;
             }
           }
 
           .level-right {
+            display: flex;
+            align-items: center;
+
             .level-item {
-              margin-left: 1rem;
+              margin-left: 1.5rem;
+            }
+          }
+        }
+
+        .datasource-content {
+          height: calc(100vh - 11rem);
+
+          .tabs {
+            .nav {
+              .nav-link.active {
+                color: v.$color-alias-background-default;
+              }
+            }
+
+            .tab-content.col {
+              height: calc(100vh - 11rem -2px);
+              overflow-y: auto;
+              overflow-x: hidden;
             }
           }
         }
@@ -124,7 +182,7 @@
     bottom: 0;
     left: 0.325rem;
     overflow: hidden;
-    z-index: 1001;
+    z-index: 1035;
     background-color: v.$midnight-green;
     border-radius: 0.25rem 0.25rem 0 0;
 
@@ -144,7 +202,7 @@
       flex-direction: row;
       justify-content: flex-end;
       align-items: center;
-      border-radius: 0.25rem 0.25rem 0 0;
+      border-radius: 0.5rem 0.5rem 0 0;
       box-shadow: 0 -1px 0.25rem rgba(0, 0, 0, 0.1);
 
       .bar-item {

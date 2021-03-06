@@ -4,14 +4,24 @@
     <div class="level workspace-header">
       <div class="level-left">
         <div class="level-item">Found {{ totalRows }} items</div>
+        <div class="level-item">
+          <b-button-group size="sm">
+            <b-button variant="outline-dark" v-b-toggle.sidebar-right
+              >Filters</b-button
+            >
+            <b-button variant="dark">
+              <fa-icon icon="times-circle" size="sm"></fa-icon>
+            </b-button>
+          </b-button-group>
+        </div>
       </div>
       <div class="level-right">
         <div class="level-item">
           <workspace-pagination
-              :current-page.sync="currentPage"
-              :per-page="perPage"
-              :total-rows="totalRows"
-              @change="changePage"
+            :current-page.sync="currentPage"
+            :per-page="perPage"
+            :total-rows="totalRows"
+            @change="changePage"
           ></workspace-pagination>
         </div>
       </div>
@@ -19,52 +29,41 @@
 
     <!-- Main table element -->
     <b-table
-        id="workspace-table"
-        class="workspace-table"
-        :current-page="currentPage"
-        :fields="fields"
-        :filter="filterInput"
-        :filter-included-fields="filterOn"
-        :items="items"
-        :per-page="perPage"
-        :sort-by.sync="sortBy"
-        :sort-desc.sync="sortDesc"
-        :sort-direction="sortDirection"
-        show-empty
-        :sticky-header="stickyHeight"
-        no-border-collapse
-        no-sort-reset
-        no-select-on-click
-        striped
-        small
-        primary-key="id"
-        @filtered="onFiltered"
+      id="workspace-table"
+      class="workspace-table"
+      :current-page="currentPage"
+      :fields="fields"
+      :filter="filterInput"
+      :filter-included-fields="filterOn"
+      :items="items"
+      :per-page="perPage"
+      :sort-by.sync="sortBy"
+      :sort-desc.sync="sortDesc"
+      :sort-direction="sortDirection"
+      show-empty
+      :sticky-header="stickyHeight"
+      no-border-collapse
+      no-sort-reset
+      no-select-on-click
+      striped
+      small
+      primary-key="id"
+      @filtered="onFiltered"
     >
       <template #head()="column">
         <div class="workspace-thead" v-if="column.label.length > 0">
           <span>{{ column.label }}</span>
-          <b-dropdown
-              :id="'thead-filter-dropdown-' + column.field.key"
-              size="sm"
-              variant="light"
-              menu-class="mt-2"
-          >
-            <template #button-content>
-              <b-icon-filter-circle-fill
-                  v-if="columnHasFilter(column.field.key)"
-              ></b-icon-filter-circle-fill>
-              <b-icon-filter-circle v-else></b-icon-filter-circle>
-            </template>
-            <template #default>
-              {{ column }}
-            </template>
-          </b-dropdown>
+          <workspace-column-filter
+            :column="column"
+            :active="columnHasFilter(column.field.key)"
+            v-if="column.field.filter"
+          ></workspace-column-filter>
         </div>
       </template>
       <template #cell(actions)="row">
         <a
-            @click="info(row.item, row.index, $event.target)"
-            class="btn btn-link"
+          @click="info(row.item, row.index, $event.target)"
+          class="btn btn-link"
         >
           <fa-icon icon="eye" size="sm" class="mr-1"></fa-icon>
         </a>
@@ -87,10 +86,10 @@
       <div class="level-right">
         <div class="level-item">
           <workspace-pagination
-              :current-page.sync="currentPage"
-              :per-page="perPage"
-              :total-rows="totalRows"
-              @change="changePage"
+            :current-page.sync="currentPage"
+            :per-page="perPage"
+            :total-rows="totalRows"
+            @change="changePage"
           ></workspace-pagination>
         </div>
       </div>
@@ -113,28 +112,31 @@
     >
       <pre>{{ filterModal.content }}</pre>
     </b-modal>
+
+    <workspace-sidebar
+      :current="filterOn"
+      :form="filterInput"
+    ></workspace-sidebar>
   </b-container>
 </template>
 
 <script>
 import fieldSpec from "../../../schema/fields.json";
 import mockData from "../../../schema/MOCK_DATA.json";
-import { BIconFilterCircle, BIconFilterCircleFill } from "bootstrap-vue";
-import WorkspacePagination from "@/components/ContentTabs/WorkspaceContent/WorkspacePagination";
 
 export default {
   name: "WorkspaceContent",
   components: {
-    WorkspacePagination,
-    BIconFilterCircle,
-    BIconFilterCircleFill
+    WorkspaceSidebar: () => import("./WorkspaceSidebar"),
+    WorkspacePagination: () => import("./WorkspacePagination"),
+    WorkspaceColumnFilter: () => import("./WorkspaceColumnFilter"),
   },
   data() {
     return {
       totalRows: 0,
       currentPage: 1,
       perPage: 30,
-      pageOptions: [ 30, 60, 90, 120 ],
+      pageOptions: [30, 60, 90, 120],
       sortBy: "dts",
       sortDesc: false,
       sortDirection: "asc",
@@ -143,15 +145,15 @@ export default {
       infoModal: {
         id: "info-modal",
         title: "",
-        content: ""
+        content: "",
       },
       filterModal: {
         id: "filter-modal",
         title: "",
-        content: ""
+        content: "",
       },
       items: mockData,
-      fields: fieldSpec
+      fields: fieldSpec,
     };
   },
   computed: {
@@ -165,11 +167,11 @@ export default {
     sortOptions() {
       // Create an options list from our fields
       return this.fields
-      .filter(f => f.sortable)
-      .map(f => {
-        return { text: f.label, value: f.key };
-      });
-    }
+        .filter((f) => f.sortable)
+        .map((f) => {
+          return { text: f.label, value: f.key };
+        });
+    },
   },
   mounted() {
     // Set the initial number of items
@@ -204,7 +206,7 @@ export default {
     },
     changePage(value) {
       this.currentPage = value;
-    }
-  }
+    },
+  },
 };
 </script>

@@ -15,7 +15,9 @@ import {
   faEye,
   faQuestionCircle,
   faLanguage,
-  faUserCircle
+  faTimes,
+  faTimesCircle,
+  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -32,6 +34,8 @@ library.add(
   faEye,
   faQuestionCircle,
   faLanguage,
+  faTimes,
+  faTimesCircle,
   faUserCircle
 );
 

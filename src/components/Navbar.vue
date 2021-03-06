@@ -1,5 +1,5 @@
 <template functional>
-  <b-navbar toggleable="md" type="light">
+  <b-navbar toggleable="md" type="light" fixed>
     <b-navbar-nav>
       <b-nav-item href="#" class="px-1">
         <fa-icon icon="bars" size="lg" class="mr-1"></fa-icon>

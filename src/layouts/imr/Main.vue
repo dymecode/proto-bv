@@ -1,3 +1,15 @@
+<script>
+export default {
+  name: "Main",
+  components: {
+    navbar: () => import("../../components/Navbar.vue"),
+    bottombar: () => import("../../components/Bottombar.vue"),
+    "content-tabs": () =>
+      import("../../components/ContentTabs/ContentTabs.vue"),
+  },
+};
+</script>
+
 <template>
   <div class="imr">
     <navbar></navbar>
@@ -5,14 +17,3 @@
     <bottombar></bottombar>
   </div>
 </template>
-
-<script>
-import Navbar from "../../components/Navbar.vue";
-import Bottombar from "../../components/Bottombar.vue";
-import ContentTabs from "../../components/ContentTabs/ContentTabs.vue";
-
-export default {
-  name: "Main",
-  components: { Navbar, Bottombar, ContentTabs }
-};
-</script>

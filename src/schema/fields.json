@@ -8,13 +8,19 @@
     "key": "id",
     "label": "id",
     "sortable": true,
-    "tdClass": "table-cell"
+    "tdClass": "table-cell",
+    "filter": {
+      "type": "text"
+    }
   },
   {
     "key": "pn",
     "label": "pn",
-    "sortable": true,
-    "tdClass": "table-cell"
+    "sortable": false,
+    "tdClass": "table-cell",
+    "filter": {
+      "type": "treeselect-multi"
+    }
   },
   {
     "key": "ci",
@@ -26,18 +32,21 @@
     "key": "cat",
     "label": "cat",
     "sortable": true,
-    "tdClass": "table-cell"
+    "tdClass": "table-cell",
+    "filter": {
+      "type": "treeselect-multi"
+    }
   },
   {
     "key": "desc",
     "label": "desc",
-    "sortable": true,
+    "sortable": false,
     "tdClass": "table-cell"
   },
   {
     "key": "osl",
     "label": "osl",
-    "sortable": true,
+    "sortable": false,
     "tdClass": "table-cell"
   },
   {
@@ -67,7 +76,7 @@
   {
     "key": "yn",
     "label": "yn",
-    "sortable": true,
+    "sortable": false,
     "tdClass": "table-cell"
   }
 ]
