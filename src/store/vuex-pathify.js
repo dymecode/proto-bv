@@ -5,6 +5,18 @@ import pathify from "vuex-pathify";
 // store definition
 const store = {
   // state, members, modules, etc
+  state: {
+    user: {},
+    imr: {
+      optionLists: {
+        yesNo: ["Yes", "No"],
+        yesNoNa: ["Yes", "No", "N/A"],
+        sizing: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+      },
+      definitions: {},
+      pageData: {},
+    },
+  },
 };
 
 // store
