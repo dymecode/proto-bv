@@ -12,8 +12,9 @@
     </template>
 
     <b-dropdown-form>
-      <b-form-group :label="column.field.label" label-size="sm"></b-form-group>
-      <component :is="inputControl(column.field.filter.type)"></component>
+      <b-form-group :label="column.field.label" label-size="sm">
+        <component :is="inputControl(column.field.filter.type)"></component>
+      </b-form-group>
     </b-dropdown-form>
   </b-dropdown>
 </template>

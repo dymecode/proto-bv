@@ -7,6 +7,13 @@
     z-index="1025"
     class="sidebar-right"
   >
+    <template #header="{ hide }">
+      <h5>Sidebar</h5>
+      <button type="button" class="close m-0" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </template>
+
     <b-card no-body class="mx-3 mb-2">
       <template #header>
         <h6 class="mb-0">Current</h6>
