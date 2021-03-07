@@ -1,0 +1,294 @@
+.timeline-container,
+.scheduled-container {
+  @apply mt-6;
+
+  > h2 {
+    @apply text-2xl mb-4 font-medium;
+  }
+}
+
+/* timeline */
+.timeline {
+  @apply list-reset m-0 p-0;
+}
+
+.timeline-incident {
+  @apply border-l-2 ml-2 relative pt-0 pb-6 pl-6;
+
+  border-color: var(--grey-light);
+
+  &:last-child {
+    border-color: var(--transparent);
+  }
+
+  &::before {
+    @apply w-6 h-6 border-2 absolute rounded-full z-10;
+
+    background-color: var(--white);
+    border-color: var(--grey-light);
+    content: ' ';
+    left: -13px;
+    top: 0;
+
+  }
+
+  &::before {
+    border-color: var(--grey-darker);
+
+    .under-maintenance& {
+      border-color: var(--grey-darker);
+    }
+
+    .degraded-performance& {
+      border-color: var(--purple);
+    }
+
+    .partial-outage& {
+      border-color: var(--orange);
+    }
+
+    .major-outage& {
+      border-color: var(--red);
+    }
+
+    .operational& {
+      border-color: var(--grey-light);
+    }
+  }
+}
+
+.timeline-incident-title {
+  @apply text-xl font-medium mb-4;
+}
+
+.timeline-incident-body {
+  @apply pb-2;
+
+  .message {
+    color: var(--grey-darker);
+  }
+}
+
+/* Incidents */
+.incident {
+  background-color: var(--white);
+  border-color: var(--grey-light);
+
+  @apply leading-normal p-4 pt-6 shadow rounded my-4 border;
+
+  .incident-header {
+    @apply flex flex-col justify-between;
+
+    @screen sm {
+      @apply flex-row;
+    }
+
+    &.level-0 {
+      .incident-title {
+        @apply block;
+      }
+    }
+  }
+
+  .incident-title {
+    @apply flex items-start justify-between flex-row-reverse mb-4;
+
+    @screen sm {
+      @apply items-center flex-row;
+    }
+
+    &.level-0 {
+      @apply text-center;
+    }
+
+    .badge {
+      @apply block text-center;
+
+      color: var(--white);
+
+      @screen sm {
+        @apply mr-2;
+      }
+    }
+
+    a {
+      color: var(--black);
+
+      * {
+        @apply text-lg block;
+      }
+    }
+  }
+
+  .incident-subtitle {
+    @apply flex flex-col items-center justify-between;
+
+    @screen sm {
+      @apply flex-row;
+    }
+
+    time {
+      @apply font-medium;
+    }
+
+    .status {
+      @apply my-2;
+
+      @screen sm {
+        @apply mb-0;
+      }
+    }
+  }
+
+  .incident-systems {
+    @apply mb-2 text-center;
+
+    .badge {
+      @apply inline-block ml-2 mb-2;
+
+      color: var(--grey-darker);
+      background-color: var(--grey-lighter);
+    }
+  }
+
+  &.under-maintenance {
+    &.unresolved {
+      .incident-title {
+        .badge {
+          background-color: var(--grey-darker);
+        }
+
+        a {
+          color: var(--grey-darker);
+        }
+      }
+    }
+
+    .incident-subtitle .status {
+      color: var(--grey-darker);
+    }
+  }
+
+  &.degraded-performance {
+    &.unresolved {
+      .incident-title {
+        .badge {
+          background-color: var(--purple);
+        }
+
+        a {
+          color: var(--purple);
+        }
+      }
+    }
+
+    .incident-subtitle .status {
+      color: var(--purple);
+    }
+  }
+
+  &.partial-outage {
+    &.unresolved {
+      .incident-title {
+        .badge {
+          background-color: var(--orange);
+        }
+
+        a {
+          color: var(--orange);
+        }
+      }
+    }
+
+    .incident-subtitle .status {
+      color: var(--orange);
+    }
+  }
+
+  &.major-outage {
+    &.unresolved {
+      .incident-title {
+        .badge {
+          background-color: var(--red);
+        }
+
+        a {
+          color: var(--red);
+        }
+      }
+    }
+
+    .incident-subtitle .status {
+      color: var(--red);
+    }
+  }
+
+  &.resolved {
+    .incident-title {
+      .badge {
+        background-color: var(--green);
+      }
+    }
+  }
+
+  &.scheduled {
+    .incident-title {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+.incident-body {
+  > p,
+  > div {
+    @apply my-4;
+  }
+
+  .markdown {
+    @apply mb-0
+  }
+
+  a {
+    color: var(--blue);
+
+    &.external {
+      svg {
+        color: var(--grey-dark);
+      }
+    }
+  }
+
+  .update-block {
+    @apply flex flex-col-reverse border-b mb-0 py-2;
+
+    &:first-child {
+      @apply pt-0;
+
+      .update-block-content {
+        @apply mt-0
+      }
+    }
+
+    &:last-child {
+      @apply border-b-0 mb-0 pb-0;
+
+      .update-block-date {
+        @apply mb-0
+      }
+    }
+  }
+
+  .update-block-date {
+    @apply my-2 text-sm;
+    color: var(--grey-dark);
+  }
+
+  .update-block-content {
+    @apply flex-initial my-2;
+  }
+
+  .update-block-title {
+    @apply font-semibold mb-2 text-lg;
+  }
+}

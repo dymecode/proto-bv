@@ -1,2 +1,263 @@
 @charset "UTF-8";
-@import "variables";
+@use "variables" as v;
+
+.imr {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+
+  .navbar {
+    background-color: v.$color-alias-background-tertiary;
+    width: 100vw;
+    height: 4rem;
+    box-shadow: unset;
+    border-bottom: 2px solid v.$color-alias-appframe-border;
+  }
+
+  .content-tabs {
+    width: 100vw;
+    height: calc(100vh - 6rem);
+    padding-top: 0.5rem;
+
+    .page-title {
+      font-size: 1.5rem;
+      margin: 0 3rem 0 1.5rem;
+    }
+
+    .nav-link.active {
+      color: v.$secondary;
+    }
+
+    .tab-content {
+      padding-top: 1rem;
+      margin: 0 1rem;
+
+      .tab-pane {
+        width: 100%;
+        height: calc(100vh - 11rem);
+        overflow: hidden;
+
+        .workspace {
+          width: 100%;
+
+          .sidebar-right {
+            .b-sidebar {
+              height: calc(100vh - 6rem - 0.25rem);
+              top: 4rem;
+              border-top: 1px solid v.$color-alias-appframe-border;
+              border-left: 1px solid v.$color-alias-appframe-border;
+              border-bottom: 1px solid v.$color-alias-appframe-border;
+              border-radius: 0.5rem 0 0 0.5rem;
+
+              .b-sidebar-body {
+                height: calc(100vh - 6rem - 0.25rem - 8rem);
+                .card {
+                  height: 48%;
+                  .list-group {
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    .list-group-item {
+                      font-size: 0.875rem;
+                      padding: 0.25rem 1.25rem;
+                    }
+                  }
+                }
+              }
+              .b-sidebar-header {
+                height: 3rem;
+              }
+
+              .b-sidebar-footer {
+                height: 5rem;
+              }
+            }
+          }
+
+          .workspace-header {
+            height: 3.5rem;
+          }
+
+          .workspace-table {
+            border: 1px solid v.$color-alias-appframe-border;
+            overflow: auto;
+            height: calc(100vh - 11rem);
+            scrollbar-width: thin;
+
+            table {
+              width: calc(100vw - 30px);
+
+              thead {
+                th.table-b-table-default {
+                  .workspace-thead {
+                    min-width: 10rem;
+                    max-width: 20rem;
+                    height: 2rem;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-right: 0.25rem;
+                  }
+                }
+              }
+
+              tbody {
+                margin-top: 96px;
+              }
+
+              .table-cell {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 0.75rem;
+                min-width: 10rem;
+                max-width: 20rem;
+              }
+
+              .b-dropdown-form {
+                padding: 1rem;
+
+                .over-icon {
+                  top: -5px;
+                }
+              }
+            }
+          }
+        }
+
+        .level {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .level-left {
+            display: flex;
+            align-items: center;
+
+            .level-item {
+              margin-right: 1.5rem;
+            }
+          }
+
+          .level-right {
+            display: flex;
+            align-items: center;
+
+            .level-item {
+              margin-left: 1.5rem;
+            }
+          }
+        }
+
+        .datasource-content {
+          height: calc(100vh - 11rem);
+
+          .tabs {
+            .nav {
+              .nav-link.active {
+                color: v.$color-alias-background-default;
+              }
+            }
+
+            .tab-content.col {
+              height: calc(100vh - 11rem -2px);
+              overflow-y: auto;
+              overflow-x: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-drawer {
+    height: v.$dimension-alias-single-line-height;
+    width: calc(100vw - 0.75rem);
+    position: fixed;
+    bottom: 0;
+    left: 0.325rem;
+    overflow: hidden;
+    z-index: 1035;
+    background-color: v.$midnight-green;
+    border-radius: 0.25rem 0.25rem 0 0;
+
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+    &.open {
+      height: 15rem;
+    }
+
+    .bottombar {
+      //background: linear-gradient(to right, v.$skobeloff, v.$russian-violet-2);
+
+      padding: 0.25rem 1.5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      border-radius: 0.5rem 0.5rem 0 0;
+      box-shadow: 0 -1px 0.25rem rgba(0, 0, 0, 0.1);
+
+      .bar-item {
+        color: v.$color-alias-background-default;
+        font-size: 11px;
+        padding-left: 1.5rem;
+        line-height: 1;
+        letter-spacing: 0.5px;
+      }
+      .bar-toggle {
+        color: v.$color-alias-background-default;
+        margin: 0 auto 0 0;
+        cursor: pointer;
+      }
+    }
+
+    .drawer-content {
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      border-top: 1px solid v.$color-alias-appframe-border;
+
+      .brand-footer {
+        .footer-logo {
+          display: inline-block;
+          background-color: #ffffffee;
+          border-radius: 5em;
+          padding: 0.75em;
+
+          img {
+            width: 4em;
+          }
+        }
+
+        .logo-font {
+          font-family: "Geostar Fill", cursive;
+        }
+      }
+    }
+  }
+}
+
+.page-item {
+  line-height: 1;
+}
+
+.custom-select {
+  background: unset;
+
+  &:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f095";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+  }
+}

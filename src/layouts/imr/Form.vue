@@ -1,9 +1,9 @@
 <template>
-  <router-view />
+  <div class="imr-form"></div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "Form",
 };
 </script>

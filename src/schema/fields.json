@@ -1,0 +1,82 @@
+[
+  {
+    "key": "actions",
+    "label": "",
+    "stickyColumn": true
+  },
+  {
+    "key": "id",
+    "label": "id",
+    "sortable": true,
+    "tdClass": "table-cell",
+    "filter": {
+      "type": "text"
+    }
+  },
+  {
+    "key": "pn",
+    "label": "pn",
+    "sortable": false,
+    "tdClass": "table-cell",
+    "filter": {
+      "type": "treeselect-multi"
+    }
+  },
+  {
+    "key": "ci",
+    "label": "ci",
+    "sortable": true,
+    "tdClass": "table-cell"
+  },
+  {
+    "key": "cat",
+    "label": "cat",
+    "sortable": true,
+    "tdClass": "table-cell",
+    "filter": {
+      "type": "treeselect-multi"
+    }
+  },
+  {
+    "key": "desc",
+    "label": "desc",
+    "sortable": false,
+    "tdClass": "table-cell"
+  },
+  {
+    "key": "osl",
+    "label": "osl",
+    "sortable": false,
+    "tdClass": "table-cell"
+  },
+  {
+    "key": "tz",
+    "label": "tz",
+    "sortable": true,
+    "tdClass": "table-cell"
+  },
+  {
+    "key": "dts",
+    "label": "dts",
+    "sortable": true,
+    "tdClass": "table-cell"
+  },
+  {
+    "key": "grp",
+    "label": "grp",
+    "sortable": true,
+    "tdClass": "table-cell"
+  },
+  {
+    "key": "du",
+    "label": "du",
+    "sortable": true,
+    "tdClass": "table-cell"
+  },
+  {
+    "key": "yn",
+    "label": "yn",
+    "sortable": false,
+    "tdClass": "table-cell"
+  }
+]

@@ -1,12 +1,59 @@
-@import './spectrum/colorGlobals';
-@import './spectrum/themeLight';
-@import './spectrum/colorAliases';
-@import './spectrum/colorSemantics';
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geostar+Fill&display=swap");
+@import "./dictionary/fontGlobals";
 
-// Define variable defaults
+@import "./dictionary/colorGlobals";
+@import "./dictionary/colorAliases";
+@import "./dictionary/colorSemantics";
+@import "./colorCustom";
+
+@import "./dictionary/dimensionGlobals";
+@import "./dictionary/dimensionAliases";
+
+$white: $color-global-gray-75;
+$gray-100: $color-global-gray-100;
+$gray-200: $color-global-gray-200;
+$gray-300: $color-global-gray-300;
+$gray-400: $color-global-gray-400;
+$gray-500: $color-global-gray-500;
+$gray-600: $color-global-gray-600;
+$gray-700: $color-global-gray-700;
+$gray-800: $color-global-gray-800;
+$gray-900: $color-global-gray-900;
+
+$primary: $dark-purple;
+$secondary: $midnight-green;
+$success: $color-semantic-positive-default;
+$info: $color-semantic-informative-default;
+$warning: $color-semantic-notice-default;
+$danger: $color-semantic-negative-default;
+
+$enable-caret: false;
+$enable-rounded: true;
+$enable-transitions: true;
+$enable-print-styles: false;
+
 $body-bg: $color-alias-background-default;
 $body-color: $color-alias-text;
 
+$link-color: $primary;
+
+$link-hover-color: $midnight-green-2;
+
+$line-height-lg: 1.6;
+$line-height-sm: 1.2;
+
+$border-color: $color-alias-border;
+
+$border-radius: 6px;
+$border-radius-lg: 9px;
+$border-radius-sm: 3px;
+
+$component-active-bg: $secondary;
+
 // Then import Bootstrap an BootstrapVue SCSS files (order is important)
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
-@import 'node_modules/bootstrap-vue/src/index.scss';
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-vue/src/index.scss";
+@import "node_modules/vue-good-table/src/styles/style.scss";

@@ -1,16 +1,19 @@
+<script>
+export default {
+  name: "Main",
+  components: {
+    navbar: () => import("../../components/Navbar.vue"),
+    bottombar: () => import("../../components/Bottombar.vue"),
+    "content-tabs": () =>
+      import("../../components/ContentTabs/ContentTabs.vue"),
+  },
+};
+</script>
+
 <template>
   <div class="imr">
     <navbar></navbar>
-    <page-view></page-view>
+    <content-tabs></content-tabs>
+    <bottombar></bottombar>
   </div>
 </template>
-
-<script>
-
-import Navbar from '../../components/Navbar.vue';
-import PageView from '../../components/PageView.vue';
-export default {
-  name: "Main",
-  components: { Navbar, PageView }
-};
-</script>

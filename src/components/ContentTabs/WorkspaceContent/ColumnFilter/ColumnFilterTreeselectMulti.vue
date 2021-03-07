@@ -1,9 +1,9 @@
 <template>
-  <router-view />
+  <b-input></b-input>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "ColumnFilterTreeselectMulti",
 };
 </script>

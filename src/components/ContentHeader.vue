@@ -1,9 +1,9 @@
 <template>
-  <router-view />
+  <div class="content-header"></div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "ContentHeader",
 };
 </script>
