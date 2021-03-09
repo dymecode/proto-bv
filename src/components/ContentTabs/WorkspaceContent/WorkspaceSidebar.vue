@@ -1,15 +1,19 @@
 <template>
   <b-sidebar
     id="sidebar-right"
-    title="Sidebar"
     right
-    shadow
     z-index="1025"
     class="sidebar-right"
+    :visible="visible"
   >
-    <template #header="{ hide }">
+    <template #header>
       <h5>Sidebar</h5>
-      <button type="button" class="close m-0" aria-label="Close">
+      <button
+        type="button"
+        class="close m-0"
+        aria-label="Close"
+        @click="$emit('toggle-sidebar')"
+      >
         <span aria-hidden="true">&times;</span>
       </button>
     </template>
@@ -30,17 +34,15 @@
 
     <b-card no-body class="mx-3 mb-2">
       <template #header>
-        <h6 class="mb-0">Hello World</h6>
+        <h6 class="mb-0">Add</h6>
       </template>
 
-      <b-list-group flush>
-        <b-list-group-item>Cras justo odio</b-list-group-item>
-        <b-list-group-item>Dapibus ac facilisis in</b-list-group-item>
-        <b-list-group-item>Vestibulum at eros</b-list-group-item>
-      </b-list-group>
+      <b-card-body>
+        <pre>{{ form }}</pre>
+      </b-card-body>
     </b-card>
 
-    <template #footer="{ hide }">
+    <template #footer>
       <div class="px-3">
         <b-button size="sm" block variant="primary">Apply</b-button>
         <b-button size="sm" block variant="outline-danger">Reset</b-button>
@@ -55,6 +57,9 @@ export default {
   props: {
     current: {},
     form: {},
+    visible: Boolean,
   },
+  computed: {},
+  methods: {},
 };
 </script>

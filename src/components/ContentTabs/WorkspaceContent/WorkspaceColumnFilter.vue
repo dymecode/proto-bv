@@ -3,11 +3,10 @@
     :id="'thead-filter-dropdown-' + column.field.key"
     size="sm"
     variant="light"
-    menu-class="mt-2"
-    right
+    menu-class="mt-3"
   >
     <template #button-content>
-      <b-icon-filter-circle-fill v-if="active"></b-icon-filter-circle-fill>
+      <b-icon-filter-circle-fill v-if="false"></b-icon-filter-circle-fill>
       <b-icon-filter-circle v-else></b-icon-filter-circle>
     </template>
 
@@ -25,7 +24,6 @@ export default {
   name: "WorkspaceColumnFilter",
   props: {
     column: {},
-    active: Boolean,
   },
   components: {
     BIconFilterCircle,

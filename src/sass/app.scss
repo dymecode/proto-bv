@@ -45,15 +45,16 @@
 
           .sidebar-right {
             .b-sidebar {
-              height: calc(100vh - 6rem - 0.25rem);
-              top: 4rem;
+              height: calc(100vh - 11rem - 0.25rem);
+              top: 7.5rem;
               border-top: 1px solid v.$color-alias-appframe-border;
               border-left: 1px solid v.$color-alias-appframe-border;
               border-bottom: 1px solid v.$color-alias-appframe-border;
               border-radius: 0.5rem 0 0 0.5rem;
+              box-shadow: 0 1px 8px -1px rgba(0, 0, 0, 0.12);
 
               .b-sidebar-body {
-                height: calc(100vh - 6rem - 0.25rem - 8rem);
+                height: calc(100vh - 11rem - 0.25rem - 8rem);
                 .card {
                   height: 48%;
                   .list-group {
@@ -120,11 +121,15 @@
                 max-width: 20rem;
               }
 
-              .b-dropdown-form {
-                padding: 1rem;
+              .dropdown-menu {
+                box-shadow: 0 1px 8px -1px rgba(0, 0, 0, 0.12);
 
-                .over-icon {
-                  top: -5px;
+                .b-dropdown-form {
+                  padding: 1rem;
+
+                  .over-icon {
+                    top: -5px;
+                  }
                 }
               }
             }
