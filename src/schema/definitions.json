@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost:8008/definitions.json",
+  "title": "Fields",
+  "description": "The fields specification",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "sortable": { "type": "boolean" },
+    "thClass": {
+      "type": "string"
+    },
+    "tdClass": {
+      "type": "string"
+    },
+    "asFilter": {
+      "type": "object",
+      "properties": {}
+    },
+    "asForm": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "required": ["key"]
+}
