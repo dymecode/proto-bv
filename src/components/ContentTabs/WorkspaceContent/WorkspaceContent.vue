@@ -6,7 +6,7 @@
         <div class="level-item">Found {{ totalRows }} items</div>
         <div class="level-item">
           <b-button-group size="sm">
-            <b-button variant="outline-dark" v-b-toggle.sidebar-right
+            <b-button variant="outline-dark" @click="toggleSidebar"
               >Filters</b-button
             >
             <b-button variant="dark">
@@ -49,14 +49,14 @@
       small
       primary-key="id"
       @filtered="onFiltered"
+      :busy="loading"
     >
       <template #head()="column">
-        <div class="workspace-thead" v-if="column.label.length > 0">
+        <div class="workspace-thead" v-if="visibleColumn(column)">
           <span>{{ column.label }}</span>
           <workspace-column-filter
             :column="column"
-            :active="columnHasFilter(column.field.key)"
-            v-if="column.field.filter"
+            v-if="columnHasFilter(column)"
           ></workspace-column-filter>
         </div>
       </template>
@@ -67,6 +67,14 @@
         >
           <fa-icon icon="eye" size="sm" class="mr-1"></fa-icon>
         </a>
+      </template>
+
+      <template #busy>
+        <b-spinner
+          style="width: 3rem; height: 3rem"
+          label="Large Spinner"
+          type="grow"
+        ></b-spinner>
       </template>
     </b-table>
 
@@ -116,6 +124,8 @@
     <workspace-sidebar
       :current="filterOn"
       :form="filterInput"
+      :visible="showSidebar"
+      @toggle-sidebar="toggleSidebar"
     ></workspace-sidebar>
   </b-container>
 </template>
@@ -133,6 +143,8 @@ export default {
   },
   data() {
     return {
+      loading: false,
+      showSidebar: false,
       totalRows: 0,
       currentPage: 1,
       perPage: 30,
@@ -152,7 +164,7 @@ export default {
         title: "",
         content: "",
       },
-      items: mockData,
+      items: [],
       fields: fieldSpec,
     };
   },
@@ -173,13 +185,32 @@ export default {
         });
     },
   },
+  created() {
+    this.initialParams();
+  },
   mounted() {
-    // Set the initial number of items
-    this.totalRows = this.items.length;
+    this.loadTableData();
+
+    this.filterInput.pn = ["S", "M"];
   },
   methods: {
-    columnHasFilter(key) {
-      return this.filterInput.hasOwnProperty(key);
+    initialParams() {
+      this.filterInput = Object.fromEntries(
+        this.fields
+          .filter((f) => f.hasOwnProperty("filter"))
+          .map((f) => {
+            return [f.key, null];
+          })
+      );
+    },
+    visibleColumn(colSpec) {
+      if (colSpec.field.hasOwnProperty("label")) {
+        return colSpec.label.length > 0;
+      }
+      return false;
+    },
+    columnHasFilter(colSpec) {
+      return colSpec.field.hasOwnProperty("filter");
     },
     info(item, index, button) {
       this.infoModal.title = `Row index: ${index}`;
@@ -206,6 +237,22 @@ export default {
     },
     changePage(value) {
       this.currentPage = value;
+    },
+    toggleSidebar() {
+      this.showSidebar = !this.showSidebar;
+    },
+    async loadTableData() {
+      this.loading = true;
+      this.items = await this.mock();
+      this.totalRows = this.items.length;
+      this.loading = false;
+    },
+    mock() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(mockData);
+        }, 4000);
+      });
     },
   },
 };
