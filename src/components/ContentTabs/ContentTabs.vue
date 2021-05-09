@@ -30,7 +30,7 @@ export default {
     DashboardContent: () => import("./DashboardContent"),
     DatasourceContent: () => import("./DatasourceContent/DataSourceContent"),
     WorkspaceContent: () => import("./WorkspaceContent/WorkspaceContent"),
-    SettingsContent: () => import("./SettingsContent"),
+    SettingsContent: () => import("./SettingsContent")
   },
   computed: {
     tabIndex: {
@@ -39,8 +39,8 @@ export default {
       },
       set: function (newValue) {
         this.$localStorage.get("main.tabIndex", newValue);
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>

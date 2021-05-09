@@ -17,7 +17,7 @@ import {
   faLanguage,
   faTimes,
   faTimesCircle,
-  faUserCircle,
+  faUserCircle
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(

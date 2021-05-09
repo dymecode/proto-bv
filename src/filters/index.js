@@ -9,8 +9,8 @@ Vue.filter("localeString", function (value) {
 
 Vue.filter("implodeArray", function (value) {
   if ( value instanceof Array ) {
-    let result = '';
-    value.forEach(e => result += e + ' ');
+    let result = "";
+    value.forEach(e => (result += e + " "));
     return result;
   }
   return null;

@@ -9,19 +9,19 @@ const store = {
     user: {},
     imr: {
       optionLists: {
-        yesNo: ["Yes", "No"],
-        yesNoNa: ["Yes", "No", "N/A"],
-        sizing: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+        yesNo: [ "Yes", "No" ],
+        yesNoNa: [ "Yes", "No", "N/A" ],
+        sizing: [ "XS", "S", "M", "L", "XL", "2XL", "3XL" ]
       },
       definitions: {},
-      pageData: {},
-    },
-  },
+      pageData: {}
+    }
+  }
 };
 
 // store
 Vue.use(Vuex);
 export default new Vuex.Store({
   plugins: [pathify.plugin], // activate plugin
-  ...store,
+  ...store
 });

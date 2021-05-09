@@ -71,6 +71,6 @@
 
 <script>
 export default {
-  name: "DashboardContent",
+  name: "DashboardContent"
 };
 </script>

@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: "ContentHeader",
+  name: "ContentHeader"
 };
 </script>

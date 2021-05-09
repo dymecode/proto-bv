@@ -19,9 +19,9 @@ export default {
         width: 75,
         height: 75,
         class: "m1",
-        blankColor: "rgba(255, 255, 255, 0.5)",
-      },
+        blankColor: "rgba(255, 255, 255, 0.5)"
+      }
     };
-  },
+  }
 };
 </script>

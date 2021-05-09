@@ -21,9 +21,9 @@
         <ul>
           <li>
             <a
-                href="https://getbootstrap.com/docs/4.6/getting-started/introduction/"
-                target="_blank"
-                rel="noopener"
+              href="https://getbootstrap.com/docs/4.6/getting-started/introduction/"
+              target="_blank"
+              rel="noopener"
             >Bootstrap 4</a
             >
           </li>
@@ -53,9 +53,9 @@
           </li>
           <li>
             <a
-                href="https://fontawesome.com/icons?d=gallery"
-                target="_blank"
-                rel="noopener"
+              href="https://fontawesome.com/icons?d=gallery"
+              target="_blank"
+              rel="noopener"
             >Vue-Formulate</a
             >
           </li>
@@ -74,8 +74,8 @@ export default {
   name: "HelloWorld",
   mixins: [ Mixins ],
   props: {
-    msg: String,
-  },
+    msg: String
+  }
 };
 </script>
 

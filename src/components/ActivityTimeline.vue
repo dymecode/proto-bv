@@ -7,19 +7,19 @@
         <h3 class="timeline-incident-title">
           {{
             $tc(
-                "incidents.incidents-history-days-since-latest",
-                data.daysSinceLatest,
-                { days: data.daysSinceLatest }
+              "incidents.incidents-history-days-since-latest",
+              data.daysSinceLatest,
+              { days: data.daysSinceLatest }
             )
           }}
         </h3>
       </li>
 
       <li
-          v-for="day of days"
-          :key="day.date"
-          :class="day.status.key"
-          class="timeline-incident"
+        v-for="day of days"
+        :key="day.date"
+        :class="day.status.key"
+        class="timeline-incident"
       >
         <h3 class="timeline-incident-title">
           <nice-date :date="day.date"/>
@@ -31,9 +31,9 @@
           </div>
 
           <incident
-              v-for="incident in day.incidents"
-              :key="incident.id"
-              :incident="incident"
+            v-for="incident in day.incidents"
+            :key="incident.id"
+            :incident="incident"
           />
         </div>
       </li>

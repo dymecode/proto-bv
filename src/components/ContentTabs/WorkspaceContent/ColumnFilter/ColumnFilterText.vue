@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: "ColumnFilterText",
+  name: "ColumnFilterText"
 };
 </script>
