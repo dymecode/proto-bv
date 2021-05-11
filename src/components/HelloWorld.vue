@@ -1,12 +1,12 @@
 <template>
   <div class="hello container">
     <span class="hello-logo mb-1">
-      <img alt="dyme logo" src="../assets/logo.png"/>
+      <img alt="dyme logo" src="../assets/logo.png" />
     </span>
     <h1 class="mb-4">{{ msg }}</h1>
     <div class="row">
       <div class="col-4">
-        <p>A template for UI layout prototyping with VueJS on BootstrapVue</p>
+        <p>Sandbox playground for prototype Vue components with Bootstrap 4.</p>
       </div>
       <div class="col-3 offset-2">
         <label class="heading">Layouts</label>
@@ -24,7 +24,7 @@
               href="https://getbootstrap.com/docs/4.6/getting-started/introduction/"
               target="_blank"
               rel="noopener"
-            >Bootstrap 4</a
+              >Bootstrap 4</a
             >
           </li>
           <li>
@@ -45,18 +45,10 @@
           </li>
           <li>
             <a
-              href="https://fontawesome.com/icons?d=gallery"
+              href="https://github.com/ankurk91/vue-web-storage"
               target="_blank"
               rel="noopener"
               >Vue-Web-Storage</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://fontawesome.com/icons?d=gallery"
-              target="_blank"
-              rel="noopener"
-            >Vue-Formulate</a
             >
           </li>
         </ul>
@@ -72,10 +64,10 @@
 import Mixins from "../mixins";
 export default {
   name: "HelloWorld",
-  mixins: [ Mixins ],
+  mixins: [Mixins],
   props: {
-    msg: String
-  }
+    msg: String,
+  },
 };
 </script>
 
