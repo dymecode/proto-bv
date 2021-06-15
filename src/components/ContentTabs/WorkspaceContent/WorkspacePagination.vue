@@ -34,10 +34,10 @@ export default {
   },
   computed: {
     current: {
-      get: function () {
+      get: function() {
         return this.currentPage;
       },
-      set: function (value) {
+      set: function(value) {
         this.$emit("change", value);
       }
     }

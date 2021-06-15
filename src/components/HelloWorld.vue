@@ -66,8 +66,8 @@ export default {
   name: "HelloWorld",
   mixins: [Mixins],
   props: {
-    msg: String,
-  },
+    msg: String
+  }
 };
 </script>
 

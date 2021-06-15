@@ -179,10 +179,10 @@ export default {
     sortOptions() {
       // Create an options list from our fields
       return this.fields
-      .filter(f => f.sortable)
-      .map(f => {
-        return { text: f.label, value: f.key };
-      });
+        .filter(f => f.sortable)
+        .map(f => {
+          return { text: f.label, value: f.key };
+        });
     }
   },
   created() {
@@ -197,14 +197,14 @@ export default {
     initialParams() {
       this.filterInput = Object.fromEntries(
         this.fields
-        .filter(f => Object.prototype.hasOwnProperty.call(f, "filter"))
-        .map(f => {
-          return [ f.key, null ];
-        })
+          .filter(f => Object.prototype.hasOwnProperty.call(f, "filter"))
+          .map(f => {
+            return [f.key, null];
+          })
       );
     },
     visibleColumn(colSpec) {
-      if ( Object.prototype.hasOwnProperty.call(colSpec.field, "label") ) {
+      if (Object.prototype.hasOwnProperty.call(colSpec.field, "label")) {
         return colSpec.label.length > 0;
       }
       return false;

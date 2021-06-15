@@ -9,9 +9,9 @@ const store = {
     user: {},
     imr: {
       optionLists: {
-        yesNo: [ "Yes", "No" ],
-        yesNoNa: [ "Yes", "No", "N/A" ],
-        sizing: [ "XS", "S", "M", "L", "XL", "2XL", "3XL" ]
+        yesNo: ["Yes", "No"],
+        yesNoNa: ["Yes", "No", "N/A"],
+        sizing: ["XS", "S", "M", "L", "XL", "2XL", "3XL"]
       },
       definitions: {},
       pageData: {}

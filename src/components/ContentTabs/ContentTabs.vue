@@ -34,10 +34,10 @@ export default {
   },
   computed: {
     tabIndex: {
-      get: function () {
+      get: function() {
         return this.$localStorage.get("main.tabIndex", 0);
       },
-      set: function (newValue) {
+      set: function(newValue) {
         this.$localStorage.get("main.tabIndex", newValue);
       }
     }

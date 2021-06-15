@@ -22,7 +22,7 @@
         class="timeline-incident"
       >
         <h3 class="timeline-incident-title">
-          <nice-date :date="day.date"/>
+          <nice-date :date="day.date" />
         </h3>
 
         <div class="timeline-incident-body">
@@ -68,7 +68,7 @@ export default {
       const days = this.data.days.slice(0);
 
       // eslint-disable-next-line no-unused-vars
-      for ( const day of days ) {
+      for (const day of days) {
         day.status = this.getDayStatus(day.incidents);
       }
 
@@ -83,10 +83,10 @@ export default {
       let statusKey = "operational";
 
       // eslint-disable-next-line no-unused-vars
-      for ( const status of statuses.keys ) {
+      for (const status of statuses.keys) {
         // eslint-disable-next-line no-unused-vars
-        for ( const incident of incidents ) {
-          if ( incident.severity === status ) {
+        for (const incident of incidents) {
+          if (incident.severity === status) {
             statusKey = status;
             break;
           }
