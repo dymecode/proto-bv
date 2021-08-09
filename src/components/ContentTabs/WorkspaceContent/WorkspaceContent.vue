@@ -139,7 +139,7 @@ export default {
   components: {
     WorkspaceSidebar: () => import("./WorkspaceSidebar"),
     WorkspacePagination: () => import("./WorkspacePagination"),
-    WorkspaceColumnFilter: () => import("./WorkspaceColumnFilter"),
+    WorkspaceColumnFilter: () => import("./WorkspaceColumnFilter")
   },
   data() {
     return {
@@ -157,15 +157,15 @@ export default {
       infoModal: {
         id: "info-modal",
         title: "",
-        content: "",
+        content: ""
       },
       filterModal: {
         id: "filter-modal",
         title: "",
-        content: "",
+        content: ""
       },
       items: [],
-      fields: fieldSpec,
+      fields: fieldSpec
     };
   },
   computed: {
@@ -179,11 +179,11 @@ export default {
     sortOptions() {
       // Create an options list from our fields
       return this.fields
-        .filter((f) => f.sortable)
-        .map((f) => {
+        .filter(f => f.sortable)
+        .map(f => {
           return { text: f.label, value: f.key };
         });
-    },
+    }
   },
   created() {
     this.initialParams();
@@ -197,20 +197,20 @@ export default {
     initialParams() {
       this.filterInput = Object.fromEntries(
         this.fields
-          .filter((f) => f.hasOwnProperty("filter"))
-          .map((f) => {
+          .filter(f => Object.prototype.hasOwnProperty.call(f, "filter"))
+          .map(f => {
             return [f.key, null];
           })
       );
     },
     visibleColumn(colSpec) {
-      if (colSpec.field.hasOwnProperty("label")) {
+      if (Object.prototype.hasOwnProperty.call(colSpec.field, "label")) {
         return colSpec.label.length > 0;
       }
       return false;
     },
     columnHasFilter(colSpec) {
-      return colSpec.field.hasOwnProperty("filter");
+      return Object.prototype.hasOwnProperty.call(colSpec.field, "filter");
     },
     info(item, index, button) {
       this.infoModal.title = `Row index: ${index}`;
@@ -248,12 +248,12 @@ export default {
       this.loading = false;
     },
     mock() {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         setTimeout(() => {
           resolve(mockData);
         }, 4000);
       });
-    },
-  },
+    }
+  }
 };
 </script>

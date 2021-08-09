@@ -14,7 +14,7 @@
 export default {
   name: "DatasourceContent",
   components: {
-    ContentHeader: () => import("../../ContentHeader.vue"),
-  },
+    ContentHeader: () => import("../../ContentHeader.vue")
+  }
 };
 </script>

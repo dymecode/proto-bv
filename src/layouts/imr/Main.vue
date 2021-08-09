@@ -4,9 +4,8 @@ export default {
   components: {
     navbar: () => import("../../components/Navbar.vue"),
     bottombar: () => import("../../components/Bottombar.vue"),
-    "content-tabs": () =>
-      import("../../components/ContentTabs/ContentTabs.vue"),
-  },
+    "content-tabs": () => import("../../components/ContentTabs/ContentTabs.vue")
+  }
 };
 </script>
 

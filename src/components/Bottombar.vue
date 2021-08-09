@@ -19,7 +19,7 @@ import BrandFooter from "./BrandFooter.vue";
 import Mixins from "../mixins";
 export default {
   name: "Bottombar",
-  mixins: [ Mixins ],
+  mixins: [Mixins],
   components: { BrandFooter },
   data() {
     return {
@@ -41,7 +41,7 @@ export default {
             return "";
         }
       } else {
-        switch ( element ) {
+        switch (element) {
           case "panel":
             return "bottom-drawer";
           case "icon":

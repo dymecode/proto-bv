@@ -57,9 +57,9 @@ export default {
   props: {
     current: {},
     form: {},
-    visible: Boolean,
+    visible: Boolean
   },
   computed: {},
-  methods: {},
+  methods: {}
 };
 </script>

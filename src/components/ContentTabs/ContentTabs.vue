@@ -30,17 +30,17 @@ export default {
     DashboardContent: () => import("./DashboardContent"),
     DatasourceContent: () => import("./DatasourceContent/DataSourceContent"),
     WorkspaceContent: () => import("./WorkspaceContent/WorkspaceContent"),
-    SettingsContent: () => import("./SettingsContent"),
+    SettingsContent: () => import("./SettingsContent")
   },
   computed: {
     tabIndex: {
-      get: function () {
+      get: function() {
         return this.$localStorage.get("main.tabIndex", 0);
       },
-      set: function (newValue) {
+      set: function(newValue) {
         this.$localStorage.get("main.tabIndex", newValue);
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>

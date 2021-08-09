@@ -23,20 +23,20 @@ import { BIconFilterCircle, BIconFilterCircleFill } from "bootstrap-vue";
 export default {
   name: "WorkspaceColumnFilter",
   props: {
-    column: {},
+    column: {}
   },
   components: {
     BIconFilterCircle,
     BIconFilterCircleFill,
     "column-filter-text": () => import("./ColumnFilter/ColumnFilterText"),
     "column-filter-treeselect-multi": () =>
-      import("./ColumnFilter/ColumnFilterTreeselectMulti"),
+      import("./ColumnFilter/ColumnFilterTreeselectMulti")
   },
   computed: {},
   methods: {
     inputControl(key) {
       return "column-filter-" + key;
-    },
-  },
+    }
+  }
 };
 </script>

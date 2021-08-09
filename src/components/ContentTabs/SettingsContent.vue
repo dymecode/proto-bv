@@ -26,6 +26,6 @@
 
 <script>
 export default {
-  name: "SettingsContent",
+  name: "SettingsContent"
 };
 </script>

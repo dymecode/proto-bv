@@ -1,13 +1,13 @@
 <template>
   <b-pagination
-      v-model="current"
-      :per-page="perPage"
-      :total-rows="totalRows"
-      align="right"
-      class="my-0"
-      size="sm"
-      hide-ellipsis
-      aria-controls="workspace-table"
+    v-model="current"
+    :per-page="perPage"
+    :total-rows="totalRows"
+    align="right"
+    class="my-0"
+    size="sm"
+    hide-ellipsis
+    aria-controls="workspace-table"
   >
     <template #first-text>
       <fa-icon icon="angle-double-left" size="sm"></fa-icon>
@@ -34,10 +34,10 @@ export default {
   },
   computed: {
     current: {
-      get: function () {
+      get: function() {
         return this.currentPage;
       },
-      set: function (value) {
+      set: function(value) {
         this.$emit("change", value);
       }
     }

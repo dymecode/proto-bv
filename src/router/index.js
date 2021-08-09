@@ -10,22 +10,22 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
   },
   {
     path: "/layouts/imr",
     name: "ImrHome",
-    component: ImrHome,
+    component: ImrHome
   },
   {
     path: "/layouts/imr/form",
     name: "ImrForm",
-    component: ImrForm,
-  },
+    component: ImrForm
+  }
 ];
 
 const router = new VueRouter({
-  routes,
+  routes
 });
 
 export default router;

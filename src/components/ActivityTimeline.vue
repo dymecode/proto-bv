@@ -7,22 +7,22 @@
         <h3 class="timeline-incident-title">
           {{
             $tc(
-                "incidents.incidents-history-days-since-latest",
-                data.daysSinceLatest,
-                { days: data.daysSinceLatest }
+              "incidents.incidents-history-days-since-latest",
+              data.daysSinceLatest,
+              { days: data.daysSinceLatest }
             )
           }}
         </h3>
       </li>
 
       <li
-          v-for="day of days"
-          :key="day.date"
-          :class="day.status.key"
-          class="timeline-incident"
+        v-for="day of days"
+        :key="day.date"
+        :class="day.status.key"
+        class="timeline-incident"
       >
         <h3 class="timeline-incident-title">
-          <nice-date :date="day.date"/>
+          <nice-date :date="day.date" />
         </h3>
 
         <div class="timeline-incident-body">
@@ -31,9 +31,9 @@
           </div>
 
           <incident
-              v-for="incident in day.incidents"
-              :key="incident.id"
-              :incident="incident"
+            v-for="incident in day.incidents"
+            :key="incident.id"
+            :incident="incident"
           />
         </div>
       </li>
@@ -68,7 +68,7 @@ export default {
       const days = this.data.days.slice(0);
 
       // eslint-disable-next-line no-unused-vars
-      for ( const day of days ) {
+      for (const day of days) {
         day.status = this.getDayStatus(day.incidents);
       }
 
@@ -83,10 +83,10 @@ export default {
       let statusKey = "operational";
 
       // eslint-disable-next-line no-unused-vars
-      for ( const status of statuses.keys ) {
+      for (const status of statuses.keys) {
         // eslint-disable-next-line no-unused-vars
-        for ( const incident of incidents ) {
-          if ( incident.severity === status ) {
+        for (const incident of incidents) {
+          if (incident.severity === status) {
             statusKey = status;
             break;
           }
